@@ -10,7 +10,7 @@ from datetime import datetime
 import json
 from pathlib import Path
 import config
-from src.logger import logger
+from .logger import logger
 import hashlib
 
 class WebCrawler:

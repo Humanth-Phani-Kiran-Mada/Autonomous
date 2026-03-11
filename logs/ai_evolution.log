@@ -1,0 +1,3 @@
+2026-03-11 17:23:44 | WARNING  | src.knowledge_base:<module>:18 - sentence-transformers not available, using basic search
+2026-03-11 17:24:43 | WARNING  | src.knowledge_base:<module>:18 - sentence-transformers not available, using basic search
+2026-03-11 17:25:37 | WARNING  | src.knowledge_base:<module>:18 - sentence-transformers not available, using basic search

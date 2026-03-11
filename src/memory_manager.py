@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 import numpy as np
 import config
-from src.logger import logger
+from .logger import logger
 
 class MemoryManager:
     """Manages short-term, long-term, and episodic memory with automatic persistence"""

@@ -7,7 +7,7 @@ from datetime import datetime
 import numpy as np
 from pathlib import Path
 import config
-from src.logger import logger
+from .logger import logger
 
 class LearningEngine:
     """Autonomous learning engine that improves AI capabilities over time"""

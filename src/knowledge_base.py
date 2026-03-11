@@ -8,7 +8,7 @@ import numpy as np
 from pathlib import Path
 import pickle
 import config
-from src.logger import logger
+from .logger import logger
 
 try:
     from sentence_transformers import SentenceTransformer

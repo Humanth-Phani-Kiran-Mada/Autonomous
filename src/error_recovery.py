@@ -8,7 +8,7 @@ from datetime import datetime
 import traceback
 from pathlib import Path
 import config
-from src.logger import logger
+from .logger import logger
 
 
 class ErrorRecoverySystem:
