@@ -146,10 +146,6 @@ class AutonomousAgent:
         logger.info("[INIT] Registering core capabilities...")
         self._register_core_capabilities()
         
-        # Initialize monitoring
-        logger.info("[INIT] Initializing monitoring...")
-        self._initialize_monitoring()
-        
         # Register all cycle handlers (including new ones)
         logger.info("[INIT] Registering cycle handlers...")
         

@@ -25,7 +25,7 @@ class SelfModel:
         self.error_patterns: List[Dict] = []
         self.learning_curves: Dict[str, List[float]] = {}
         self.resource_usage: Dict[str, float] = {}
-        self.self_diagnostics: Dict[str, any] = {}
+        self.self_diagnostics: Dict[str, Any] = {}
         
         self.model_file = config.DATA_DIR / "self_model.json"
         self.diagnostics_file = config.DATA_DIR / "diagnostics.json"
