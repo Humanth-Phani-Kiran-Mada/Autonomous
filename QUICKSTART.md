@@ -1,17 +1,17 @@
-# 🤖 Self-Evolving AI System - Complete User Guide
+# Self-Evolving AI System - Complete User Guide
 
 ## ✨ What You Have
 
 A complete, production-ready **autonomous AI system** that:
-- 🌐 Crawls the web for knowledge
-- 🧠 Learns automatically from discovered content
-- 💭 Reasons about problems and makes decisions
-- 🚀 Improves its own capabilities
-- 📚 Maintains comprehensive memory
-- 🎯 Achieves self-directed goals
+- Crawls the web for knowledge
+- Learns automatically from discovered content
+- Reasons about problems and makes decisions
+- Improves its own capabilities
+- Maintains comprehensive memory
+- Achieves self-directed goals
 - ♾️ Operates indefinitely without human intervention
 
-## 🎯 Your Next Steps
+## Your Next Steps
 
 ### Step 1: Setup (Choose your OS)
 
@@ -50,7 +50,7 @@ You'll see a prompt to choose between:
 - **Autonomous Mode** - Let it learn automatically (recommended)
 - **Interactive Mode** - Control via commands
 
-## 🎮 Quick Start (60 seconds)
+## Quick Start (60 seconds)
 
 ```bash
 # 1. Setup (choose your OS above)
@@ -65,7 +65,7 @@ python main.py
 # 5. Watch as it learns!
 ```
 
-## 📚 Documentation Map
+## Documentation Map
 
 | File | Purpose | Read Time |
 |------|---------|-----------|
@@ -75,19 +75,19 @@ python main.py
 | **README.md** | Full documentation | 8 min |
 | **config.py** | All configuration options | 2 min |
 
-**Start here:** → INDEX.md → GETTING_STARTED.md → Try it → ARCHITECTURE.md
+**Start here:** -> INDEX.md -> GETTING_STARTED.md -> Try it -> ARCHITECTURE.md
 
-## 🔧 Understanding the System
+## Understanding the System
 
 ### The 5-Phase Loop (Repeating Cycle)
 
 Each iteration runs these phases in sequence:
 
-1. **🕷️ Crawling** (discover web content)
-2. **📚 Learning** (extract knowledge)
-3. **💭 Reasoning** (analyze and plan)
-4. **🚀 Improvement** (develop skills)
-5. **🔧 Maintenance** (save and optimize)
+1. ** Crawling** (discover web content)
+2. ** Learning** (extract knowledge)
+3. ** Reasoning** (analyze and plan)
+4. ** Improvement** (develop skills)
+5. ** Maintenance** (save and optimize)
 
 ### What Gets Better Over Time
 
@@ -103,7 +103,7 @@ Edit `config.py` to adjust:
 
 ```python
 # How fast it learns
-LEARNING_RATE = 0.01  # Increase for faster learning
+LEARNING_RATE = 0.01 # Increase for faster learning
 
 # How many pages to crawl per cycle
 CRAWLER_MAX_WORKERS = 5
@@ -115,7 +115,7 @@ MAX_KNOWLEDGE_ENTRIES = 100000
 AUTONOMOUS_MODE_ENABLED = True
 ```
 
-## 📊 Monitoring Progress
+## Monitoring Progress
 
 ### During Execution
 ```bash
@@ -140,25 +140,25 @@ Check these files:
 
 **Learning:**
 ```bash
-> learn      # Run one learning cycle
-> crawl      # Crawl web for content
-> improve    # Improve skills
+> learn # Run one learning cycle
+> crawl # Crawl web for content
+> improve # Improve skills
 ```
 
 **Analysis:**
 ```bash
-> query      # Ask a question
-> reason     # Reason about a topic
+> query # Ask a question
+> reason # Reason about a topic
 ```
 
 **Management:**
 ```bash
-> status     # Show statistics
-> auto 10    # Run 10 autonomous iterations
-> exit       # Exit program
+> status # Show statistics
+> auto 10 # Run 10 autonomous iterations
+> exit # Exit program
 ```
 
-## 🚀 Recommended Usage Patterns
+## Recommended Usage Patterns
 
 ### Pattern 1: Quick Test (5 minutes)
 ```bash
@@ -178,7 +178,7 @@ python main.py
 ### Pattern 3: Extended Training (Hours)
 ```bash
 python main.py
-# Autonomous mode  
+# Autonomous mode 
 # 50-100 iterations
 # Monitor logs
 # Review final results
@@ -193,7 +193,7 @@ python main.py
 # Track progress
 ```
 
-## 📈 What to Expect
+## What to Expect
 
 ### After 5 iterations
 - Basic knowledge acquired
@@ -211,7 +211,7 @@ python main.py
 - Complex reasoning capability
 - Emerging specializations
 
-## 🔐 Important Notes
+## Important Notes
 
 **It's safe to:**
 - Stop anytime (Ctrl+C) - state is saved
@@ -233,39 +233,39 @@ python main.py
 ## 🆘 Troubleshooting
 
 **"Module not found"**
-→ Run `pip install -r requirements.txt`
+-> Run `pip install -r requirements.txt`
 
 **"Python not found"**
-→ Install Python 3.8+ from python.org
+-> Install Python 3.8+ from python.org
 
 **"Permission denied"**
-→ Run `chmod +x setup.sh` (Linux/Mac)
+-> Run `chmod +x setup.sh` (Linux/Mac)
 
 **"Slow performance"**
-→ Reduce `CRAWLER_MAX_WORKERS` in config.py
+-> Reduce `CRAWLER_MAX_WORKERS` in config.py
 
 **"High memory usage"**
-→ Reduce `MAX_KNOWLEDGE_ENTRIES` in config.py
+-> Reduce `MAX_KNOWLEDGE_ENTRIES` in config.py
 
-## 📖 Learning Outcomes
+## Learning Outcomes
 
 By using this system, you'll learn about:
-- 🤖 Autonomous agent architecture
-- 🧠 Knowledge representation
-- 📚 Semantic search techniques
-- 💡 Self-improvement mechanisms
-- 🎯 Goal-oriented AI
-- 🔄 Feedback loops
-- 📊 Performance metrics
+- Autonomous agent architecture
+- Knowledge representation
+- Semantic search techniques
+- Self-improvement mechanisms
+- Goal-oriented AI
+- Feedback loops
+- Performance metrics
 
-## 🎓 Advanced Topics
+## Advanced Topics
 
 ### Customizing Learning Sources
 Edit `config.py`:
 ```python
 LEARNING_SOURCES = [
-    "https://example.com",
-    "https://another.com",
+ "https://example.com",
+ "https://another.com",
 ]
 ```
 
@@ -284,33 +284,33 @@ Analyze `data/learning_metrics.json` to:
 ## 🌟 Key Achievements
 
 This system demonstrates:
-✅ Fully autonomous operation
-✅ Self-directed learning  
-✅ Web data acquisition
-✅ Knowledge integration
-✅ Persistent memory
-✅ Goal management
-✅ Performance optimization
-✅ Error recovery
+ Fully autonomous operation
+ Self-directed learning 
+ Web data acquisition
+ Knowledge integration
+ Persistent memory
+ Goal management
+ Performance optimization
+ Error recovery
 
-## 🚀 Getting Help
+## Getting Help
 
 1. **Check the logs**
-   ```bash
-   tail -f logs/ai_evolution.log
-   ```
+ ```bash
+ tail -f logs/ai_evolution.log
+ ```
 
 2. **Review documentation**
-   - GETTING_STARTED.md for setup issues
-   - ARCHITECTURE.md for understanding
-   - config.py for customization
+ - GETTING_STARTED.md for setup issues
+ - ARCHITECTURE.md for understanding
+ - config.py for customization
 
 3. **Verify dependencies**
-   ```bash
-   pip list
-   ```
+ ```bash
+ pip list
+ ```
 
-## 💡 Pro Tips
+## Pro Tips
 
 1. **First run**: Use interactive mode to explore
 2. **Extended training**: Run during off-peak hours
@@ -318,7 +318,7 @@ This system demonstrates:
 4. **Tuning**: Start with defaults, adjust gradually
 5. **Analysis**: Review data files after runs
 
-## 📋 Checklist Before First Run
+## Checklist Before First Run
 
 - [ ] Python 3.8+ installed
 - [ ] Virtual environment created
@@ -327,7 +327,7 @@ This system demonstrates:
 - [ ] .env file configured (copy from .env.example)
 - [ ] config.py reviewed and customized
 
-## 🎉 You're Ready!
+## You're Ready!
 
 You now have a complete self-evolving AI system. 
 
@@ -343,7 +343,7 @@ You now have a complete self-evolving AI system.
 
 ---
 
-**Happy AI training! 🚀**
+**Happy AI training! **
 
 For detailed information:
 - Setup: GETTING_STARTED.md

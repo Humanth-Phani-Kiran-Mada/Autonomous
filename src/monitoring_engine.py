@@ -209,7 +209,7 @@ class MonitoringEngine:
             self.metrics[metric_name] = MetricsSeries(metric_name)
         
         self.metrics[metric_name].add(value)
-        logger.debug(f"📊 Recorded {metric_name}={value}")
+        logger.debug(f" Recorded {metric_name}={value}")
         
         # Check for alerts
         self._check_alerts(metric_name, value)
@@ -256,7 +256,7 @@ class MonitoringEngine:
             self.alerts = self.alerts[-self.max_alerts:]
         
         log_level = "warning" if severity == "warning" else "error"
-        logger.warning(f"⚠️ ALERT [{severity.upper()}] {component}: {message}")
+        logger.warning(f"⚠ ALERT [{severity.upper()}] {component}: {message}")
     
     def update_component_health(self, component: str, status: str):
         """Update component health status"""
@@ -369,7 +369,7 @@ class MonitoringEngine:
                 json.dump(metrics_data, f, indent=2)
             
             self.last_save = datetime.now()
-            logger.debug("💾 Metrics saved to disk")
+            logger.debug(" Metrics saved to disk")
         except Exception as e:
             logger.error(f"Error saving metrics: {e}")
 

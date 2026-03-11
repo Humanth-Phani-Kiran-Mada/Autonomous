@@ -1,6 +1,6 @@
 # Self-Evolving AI System - Getting Started Guide
 
-## 🚀 Quick Start (5 Minutes)
+## Quick Start (5 Minutes)
 
 ### Step 1: Setup
 ```bash
@@ -25,7 +25,7 @@ venv\Scripts\activate
 python main.py
 ```
 
-## 📋 Complete Installation Guide
+## Complete Installation Guide
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -36,47 +36,47 @@ python main.py
 ### Detailed Setup
 
 1. **Clone/Navigate to Project**
-   ```bash
-   cd /path/to/SELF_DEV_AI
-   ```
+ ```bash
+ cd /path/to/SELF_DEV_AI
+ ```
 
 2. **Create Virtual Environment**
-   ```bash
-   python3 -m venv venv
-   ```
+ ```bash
+ python3 -m venv venv
+ ```
 
 3. **Activate Virtual Environment**
-   - **Linux/Mac:**
-     ```bash
-     source venv/bin/activate
-     ```
-   - **Windows:**
-     ```bash
-     venv\Scripts\activate
-     ```
+ - **Linux/Mac:**
+ ```bash
+ source venv/bin/activate
+ ```
+ - **Windows:**
+ ```bash
+ venv\Scripts\activate
+ ```
 
 4. **Upgrade pip**
-   ```bash
-   pip install --upgrade pip
-   ```
+ ```bash
+ pip install --upgrade pip
+ ```
 
 5. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+ ```bash
+ pip install -r requirements.txt
+ ```
 
 6. **Configure Environment**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your settings
-   ```
+ ```bash
+ cp .env.example .env
+ # Edit .env with your settings
+ ```
 
 7. **Create Data Directories**
-   ```bash
-   mkdir -p data/memory data/knowledge data/cache logs
-   ```
+ ```bash
+ mkdir -p data/memory data/knowledge data/cache logs
+ ```
 
-## 🎮 Usage Modes
+## Usage Modes
 
 ### Autonomous Mode (Hands-Off)
 The AI runs autonomously, continuously learning and improving.
@@ -115,7 +115,7 @@ python main.py
 - `auto` - Run N autonomous iterations
 - `exit` - Exit program
 
-## 🧠 System Architecture
+## System Architecture
 
 ### Component Breakdown
 
@@ -128,18 +128,18 @@ python main.py
 
 ### Data Flow
 ```
-Web Crawler → Extracted Knowledge
-          ↓
-Knowledge Base ← Semantic Storage
-          ↓
-Learning Engine → Skill Development
-          ↓
-Reasoning Engine → Decision Making
-          ↓
-Memory Manager → Persistent Storage
+Web Crawler -> Extracted Knowledge
+ ↓
+Knowledge Base <- Semantic Storage
+ ↓
+Learning Engine -> Skill Development
+ ↓
+Reasoning Engine -> Decision Making
+ ↓
+Memory Manager -> Persistent Storage
 ```
 
-## 📊 Monitoring Progress
+## Monitoring Progress
 
 ### Check Status During Runtime
 ```bash
@@ -165,22 +165,22 @@ tail -f logs/errors.log
 ### Data Files
 ```
 data/
-├── memory/
-│   ├── memory_state.json      # Short/long-term memory
-│   └── episodic_memory.json   # Experiences
-├── knowledge/
-│   ├── knowledge_base.json    # All learned facts
-│   ├── embeddings.pkl         # Vector embeddings
-│   └── metadata.json          # Knowledge metadata
-├── cache/                      # Web crawler cache
-├── crawler_state.json         # Crawling history
-├── learning_metrics.json      # Learning progress
-├── skill_levels.json          # Developed skills
-├── goals.json                 # Agent goals
-└── agent_state.json           # Overall state
+├- memory/
+│ ├- memory_state.json # Short/long-term memory
+│ └- episodic_memory.json # Experiences
+├- knowledge/
+│ ├- knowledge_base.json # All learned facts
+│ ├- embeddings.pkl # Vector embeddings
+│ └- metadata.json # Knowledge metadata
+├- cache/ # Web crawler cache
+├- crawler_state.json # Crawling history
+├- learning_metrics.json # Learning progress
+├- skill_levels.json # Developed skills
+├- goals.json # Agent goals
+└- agent_state.json # Overall state
 ```
 
-## 🎯 Example Workflows
+## Example Workflows
 
 ### Workflow 1: Autonomous Learning (20 hours)
 1. Start autonomous mode with 100 iterations
@@ -203,52 +203,52 @@ data/
 4. Track progress with `status`
 5. Evaluate goal achievement
 
-## 🔧 Configuration Guide
+## Configuration Guide
 
 ### Key Settings (config.py)
 
 **Learning Speed**
 ```python
-LEARNING_RATE = 0.01  # Increase for faster learning
-LEARNING_RATE = 0.05  # Faster but less stable
+LEARNING_RATE = 0.01 # Increase for faster learning
+LEARNING_RATE = 0.05 # Faster but less stable
 ```
 
 **Web Crawling**
 ```python
-CRAWLER_MAX_WORKERS = 5      # Parallel crawlers
-CRAWLER_BATCH_SIZE = 10      # Items per batch
-CRAWLER_TIMEOUT = 30         # Seconds per request
+CRAWLER_MAX_WORKERS = 5 # Parallel crawlers
+CRAWLER_BATCH_SIZE = 10 # Items per batch
+CRAWLER_TIMEOUT = 30 # Seconds per request
 ```
 
 **Knowledge Management**
 ```python
-MAX_KNOWLEDGE_ENTRIES = 100000      # Max size
-MEMORY_COMPRESSION_RATIO = 0.8      # Prune when full
+MAX_KNOWLEDGE_ENTRIES = 100000 # Max size
+MEMORY_COMPRESSION_RATIO = 0.8 # Prune when full
 ```
 
 **Autonomous Operation**
 ```python
-AUTONOMOUS_MODE_ENABLED = true          # Auto run
-AUTO_START_LEARNING = true              # Auto crawl
-AUTO_IMPROVE = true                     # Auto improve
-SELF_IMPROVE_INTERVAL = 3600            # Seconds
+AUTONOMOUS_MODE_ENABLED = true # Auto run
+AUTO_START_LEARNING = true # Auto crawl
+AUTO_IMPROVE = true # Auto improve
+SELF_IMPROVE_INTERVAL = 3600 # Seconds
 ```
 
 ### Environment Variables (.env)
 ```bash
 # Logging
-LOG_LEVEL=INFO  # DEBUG, INFO, WARNING, ERROR
+LOG_LEVEL=INFO # DEBUG, INFO, WARNING, ERROR
 
 # Performance
-MAX_MEMORY_MB=4096           # Memory limit
-MAX_CPU_PERCENT=80           # CPU limit
-RATE_LIMIT_PER_SECOND=10    # API calls/sec
+MAX_MEMORY_MB=4096 # Memory limit
+MAX_CPU_PERCENT=80 # CPU limit
+RATE_LIMIT_PER_SECOND=10 # API calls/sec
 
 # Model
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 ```
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Issue: "Module not found"
 **Solution:**
@@ -265,17 +265,17 @@ pip install -r requirements.txt
 **Solution:**
 ```python
 # In config.py
-MAX_KNOWLEDGE_ENTRIES = 50000        # Reduce
-MEMORY_COMPRESSION_RATIO = 0.7       # Increase pruning
+MAX_KNOWLEDGE_ENTRIES = 50000 # Reduce
+MEMORY_COMPRESSION_RATIO = 0.7 # Increase pruning
 ```
 
 ### Issue: "Web crawling too slow"
 **Solution:**
 ```python
 # In config.py
-CRAWLER_MAX_WORKERS = 8              # Increase workers
-CRAWLER_BATCH_SIZE = 20              # Larger batches
-LEARNING_SOURCES = [...]             # Reduce sources
+CRAWLER_MAX_WORKERS = 8 # Increase workers
+CRAWLER_BATCH_SIZE = 20 # Larger batches
+LEARNING_SOURCES = [...] # Reduce sources
 ```
 
 ### Issue: "No improvements happening"
@@ -285,7 +285,7 @@ LEARNING_SOURCES = [...]             # Reduce sources
 - Verify knowledge is being acquired
 - Check learning metrics
 
-## 📈 Performance Optimization
+## Performance Optimization
 
 ### For Fast Learning
 ```python
@@ -312,34 +312,34 @@ CRAWLER_BATCH_SIZE = 5
 MAX_KNOWLEDGE_ENTRIES = 10000
 ```
 
-## 🔐 Safety Best Practices
+## Safety Best Practices
 
 1. **Monitor Resource Usage**
-   - Watch CPU/Memory in system monitor
-   - Set limits in config.py
+ - Watch CPU/Memory in system monitor
+ - Set limits in config.py
 
 2. **Regular Backups**
-   - Backup `data/` folder regularly
-   - Backup logs for analysis
+ - Backup `data/` folder regularly
+ - Backup logs for analysis
 
 3. **Rate Limiting**
-   - Don't crawl websites too aggressively
-   - Respect `robots.txt`
-   - Use appropriate delays
+ - Don't crawl websites too aggressively
+ - Respect `robots.txt`
+ - Use appropriate delays
 
 4. **Knowledge Review**
-   - Periodically review learned patterns
-   - Verify knowledge quality
-   - Remove/correct undesired information
+ - Periodically review learned patterns
+ - Verify knowledge quality
+ - Remove/correct undesired information
 
-## 📚 Advanced Topics
+## Advanced Topics
 
 ### Custom Learning Sources
 ```python
 # In config.py
 LEARNING_SOURCES = [
-    "https://yoursource.com",
-    "https://anotherource.com",
+ "https://yoursource.com",
+ "https://anotherource.com",
 ]
 ```
 
@@ -352,7 +352,7 @@ Modify `src/knowledge_base.py` to support new data types.
 ### Custom Skills
 Add skill tracking in `src/learning_engine.py`.
 
-## 🎓 Learning from This Project
+## Learning from This Project
 
 Key concepts demonstrated:
 - Autonomous agent architecture
@@ -372,30 +372,30 @@ For issues:
 3. Verify dependencies: `pip list`
 4. Check README.md for comprehensive docs
 
-## 🎉 Next Steps
+## Next Steps
 
 1. **Run a quick test:**
-   ```bash
-   python main.py
-   # Choose interactive mode
-   # Try: query, status, exit
-   ```
+ ```bash
+ python main.py
+ # Choose interactive mode
+ # Try: query, status, exit
+ ```
 
 2. **Let it learn:**
-   ```bash
-   python main.py
-   # Choose autonomous mode
-   # Set iterations to 10
-   # Monitor progress
-   ```
+ ```bash
+ python main.py
+ # Choose autonomous mode
+ # Set iterations to 10
+ # Monitor progress
+ ```
 
 3. **Analyze results:**
-   ```bash
-   # Check data/
-   # Review logs/ai_evolution.log
-   # View final summary
-   ```
+ ```bash
+ # Check data/
+ # Review logs/ai_evolution.log
+ # View final summary
+ ```
 
 ---
 
-**Happy learning! Your AI is ready to evolve! 🚀**
+**Happy learning! Your AI is ready to evolve! **

@@ -44,7 +44,7 @@ class CycleExecution:
         """Mark cycle as started"""
         self.status = CycleStatus.RUNNING
         self.start_time = datetime.now()
-        logger.debug(f"▶️ Cycle '{self.cycle_name}' starting...")
+        logger.debug(f"▶ Cycle '{self.cycle_name}' starting...")
     
     def complete(self, result: Dict[str, Any]):
         """Mark cycle as completed"""
@@ -119,10 +119,10 @@ class CycleCoordinator:
     def register_cycle(self, cycle_name: str, handler: Callable):
         """Register a handler for a cycle"""
         if cycle_name not in self.CYCLE_ORDER:
-            logger.warning(f"⚠️ Registering unknown cycle: {cycle_name}")
+            logger.warning(f"⚠ Registering unknown cycle: {cycle_name}")
         
         self.cycle_handlers[cycle_name] = handler
-        logger.debug(f"✅ Registered cycle handler: {cycle_name}")
+        logger.debug(f" Registered cycle handler: {cycle_name}")
     
     def register_cycles(self, handlers: Dict[str, Callable]):
         """Register multiple cycle handlers at once"""
@@ -136,11 +136,11 @@ class CycleCoordinator:
         
         for dep in dependencies:
             if dep not in completed:
-                logger.warning(f"⚠️ Dependency not found: {dep}")
+                logger.warning(f"⚠ Dependency not found: {dep}")
                 return False
             
             if completed[dep].status != CycleStatus.COMPLETED:
-                logger.warning(f"⚠️ Dependency not completed: {dep}")
+                logger.warning(f"⚠ Dependency not completed: {dep}")
                 return False
         
         return True
@@ -174,12 +174,12 @@ class CycleCoordinator:
                 result = handler()
             
             execution.complete(result)
-            logger.info(f"✅ {execution.cycle_name} completed in {execution.get_duration():.2f}s")
+            logger.info(f" {execution.cycle_name} completed in {execution.get_duration():.2f}s")
             return result
         
         except Exception as e:
             execution.fail(str(e))
-            logger.error(f"❌ {execution.cycle_name} failed: {e}")
+            logger.error(f" {execution.cycle_name} failed: {e}")
             raise
     
     def execute_cycle_sync(self, execution: CycleExecution) -> Dict[str, Any]:
@@ -193,12 +193,12 @@ class CycleCoordinator:
         try:
             result = handler()
             execution.complete(result)
-            logger.info(f"✅ {execution.cycle_name} completed in {execution.get_duration():.2f}s")
+            logger.info(f" {execution.cycle_name} completed in {execution.get_duration():.2f}s")
             return result
         
         except Exception as e:
             execution.fail(str(e))
-            logger.error(f"❌ {execution.cycle_name} failed: {e}")
+            logger.error(f" {execution.cycle_name} failed: {e}")
             raise
     
     async def execute_cycle_with_retry(self, execution: CycleExecution,
@@ -236,9 +236,9 @@ class CycleCoordinator:
     
     async def execute_iteration(self, iteration: int) -> Dict[str, CycleExecution]:
         """Execute one complete iteration of all cycles"""
-        logger.info(f"\n{'🔄' * 30}")
+        logger.info(f"\n{'' * 30}")
         logger.info(f"ITERATION {iteration}: Starting cycle sequence")
-        logger.info(f"{'🔄' * 30}")
+        logger.info(f"{'' * 30}")
         
         self.current_iteration = iteration
         iteration_start = time.time()
@@ -260,7 +260,7 @@ class CycleCoordinator:
             if not self.check_dependencies(cycle_name, completed_executions):
                 execution.status = CycleStatus.SKIPPED
                 self.skipped_cycles += 1
-                logger.warning(f"⏭️ Skipping {cycle_name} - dependencies not met")
+                logger.warning(f"⏭ Skipping {cycle_name} - dependencies not met")
                 completed_executions[cycle_name] = execution
                 continue
             
@@ -291,7 +291,7 @@ class CycleCoordinator:
                 
             except Exception as e:
                 self.failed_cycles += 1
-                logger.error(f"❌ {cycle_name} failed after {self.max_retries} retries: {e}")
+                logger.error(f" {cycle_name} failed after {self.max_retries} retries: {e}")
                 
                 # Report cycle failure
                 integration_layer.report_cycle_error(
@@ -314,11 +314,11 @@ class CycleCoordinator:
         successful = sum(1 for e in completed_executions.values()
                         if e.status == CycleStatus.COMPLETED)
         
-        logger.info(f"\n{'✅' * 20}")
+        logger.info(f"\n{'' * 20}")
         logger.info(f"ITERATION {iteration} COMPLETE")
         logger.info(f"  Cycles: {successful}/{len(self.CYCLE_ORDER)} successful")
         logger.info(f"  Duration: {iteration_duration:.2f}s")
-        logger.info(f"{'✅' * 20}\n")
+        logger.info(f"{'' * 20}\n")
         
         # Update global metrics
         monitoring_engine.record_metric("cycles.total_completed", self.completed_cycles)
@@ -377,7 +377,7 @@ class CycleCoordinator:
     
     def print_iteration_summary(self, executions: Dict[str, CycleExecution]):
         """Print summary of an iteration"""
-        logger.info(f"\n📊 ITERATION SUMMARY")
+        logger.info(f"\n ITERATION SUMMARY")
         logger.info("-" * 60)
         
         for cycle_name in self.CYCLE_ORDER:
@@ -385,13 +385,13 @@ class CycleCoordinator:
                 exec_data = executions[cycle_name]
                 
                 if exec_data.status == CycleStatus.COMPLETED:
-                    status_icon = "✅"
+                    status_icon = ""
                 elif exec_data.status == CycleStatus.FAILED:
-                    status_icon = "❌"
+                    status_icon = ""
                 elif exec_data.status == CycleStatus.SKIPPED:
-                    status_icon = "⏭️"
+                    status_icon = "⏭"
                 else:
-                    status_icon = "❓"
+                    status_icon = ""
                 
                 logger.info(f"{status_icon} {exec_data.cycle_name:20} "
                            f"{exec_data.status.value:10} "

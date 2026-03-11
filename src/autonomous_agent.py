@@ -43,7 +43,7 @@ class AutonomousAgent:
     
     def __init__(self):
         logger.info("=" * 60)
-        logger.info("🤖 INITIALIZING ADVANCED SELF-EVOLVING AI AGENT v2.0")
+        logger.info(" INITIALIZING ADVANCED SELF-EVOLVING AI AGENT v2.0")
         logger.info("=" * 60)
         
         # Initialize core components
@@ -55,7 +55,7 @@ class AutonomousAgent:
         self.crawler = WebCrawler()
         
         # Initialize advanced systems
-        logger.info("🧠 Initializing advanced systems...")
+        logger.info(" Initializing advanced systems...")
         self.self_model = SelfModel()
         self.bayesian_reasoner = BayesianReasoner()
         self.meta_learner = MetaLearner(self.learning, self.self_model)
@@ -84,7 +84,7 @@ class AutonomousAgent:
         self._initialize_monitoring()
         
         # Register cycle handlers with coordinator
-        logger.info("📋 Registering cycle handlers...")
+        logger.info(" Registering cycle handlers...")
         self._register_cycle_handlers()
         
         # Advanced action registry (kept for backwards compatibility)
@@ -100,9 +100,9 @@ class AutonomousAgent:
         }
         
         self.load_state()
-        logger.info("✅ Advanced Autonomous Agent v2.0 ready for operation")
+        logger.info(" Advanced Autonomous Agent v2.0 ready for operation")
         logger.info("━" * 60)
-        logger.info("🧠 Core Systems:")
+        logger.info(" Core Systems:")
         logger.info("   • Self-Model Engine (self-awareness)")
         logger.info("   • Meta-Learning Engine (learning optimization)")
         logger.info("   • Bayesian Reasoner (probabilistic reasoning)")
@@ -111,12 +111,12 @@ class AutonomousAgent:
         logger.info("   • Memory Consolidation (knowledge preservation)")
         logger.info("   • Error Recovery System (failure resilience)")
         logger.info("━" * 60)
-        logger.info("⚡ Integration Features:")
+        logger.info(" Integration Features:")
         logger.info("   • Event Bus: Real-time inter-component communication")
         logger.info("   • Monitoring: 50+ KPIs tracked in real-time")
         logger.info("   • Cycle Coordinator: Orchestrated 8-cycle autonomous loop")
         logger.info("━" * 60)
-        logger.info(f"🤖 Autonomous Mode: {'ENABLED' if config.AUTONOMOUS_MODE_ENABLED else 'DISABLED'}")
+        logger.info(f" Autonomous Mode: {'ENABLED' if config.AUTONOMOUS_MODE_ENABLED else 'DISABLED'}")
         logger.info("=" * 60)
     
     def _register_core_capabilities(self):
@@ -140,7 +140,7 @@ class AutonomousAgent:
     
     def _initialize_monitoring(self):
         """Initialize monitoring system with baseline metrics"""
-        logger.debug("📊 Initializing monitoring metrics...")
+        logger.debug(" Initializing monitoring metrics...")
         
         # Record initial capability levels
         for cap_name, level in self.capabilities.items():
@@ -173,7 +173,7 @@ class AutonomousAgent:
                     state = json.load(f)
                     self.iteration_count = state.get("iteration_count", 0)
                     self.capabilities = state.get("capabilities", {})
-                    logger.info(f"📂 Loaded agent state: {self.iteration_count} iterations")
+                    logger.info(f" Loaded agent state: {self.iteration_count} iterations")
         except Exception as e:
             logger.error(f"Error loading agent state: {e}")
     
@@ -193,7 +193,7 @@ class AutonomousAgent:
     async def learn_cycle(self):
         """Learning cycle - acquire and process new knowledge"""
         logger.info("\n" + "=" * 60)
-        logger.info("📚 LEARNING CYCLE")
+        logger.info(" LEARNING CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -219,7 +219,7 @@ class AutonomousAgent:
                         "type": item.get("type", "")
                     })
                     
-                    logger.info(f"✅ Processed knowledge: {learning_result['categories']}")
+                    logger.info(f" Processed knowledge: {learning_result['categories']}")
                     
                     # Report knowledge acquisition
                     self.integration.report_knowledge_acquired(
@@ -239,7 +239,7 @@ class AutonomousAgent:
             self.monitoring.record_metric("learning.total_events", 
                                         learning_summary['total_learning_events'])
             
-            logger.info(f"📈 Learning cycle complete - {len(knowledge_items)} items processed")
+            logger.info(f" Learning cycle complete - {len(knowledge_items)} items processed")
             return {"status": "success", "items_processed": len(knowledge_items)}
         
         except Exception as e:
@@ -251,7 +251,7 @@ class AutonomousAgent:
     async def crawl_cycle(self):
         """Crawling cycle - discover new resources"""
         logger.info("\n" + "=" * 60)
-        logger.info("🕷️ CRAWLING CYCLE")
+        logger.info(" CRAWLING CYCLE")
         logger.info("=" * 60)
         
         cycle_start = time.time()
@@ -266,7 +266,7 @@ class AutonomousAgent:
             # Get summary after
             after_summary = self.crawler.get_discovery_summary()
             
-            logger.info(f"🔍 Crawling Results:")
+            logger.info(f" Crawling Results:")
             logger.info(f"   URLs visited: {before_summary['total_visited_urls']} → {after_summary['total_visited_urls']}")
             logger.info(f"   Knowledge discovered: {len(knowledge_items)} items")
             logger.info(f"   Knowledge types: {after_summary['knowledge_types']}")
@@ -286,7 +286,7 @@ class AutonomousAgent:
     def improvement_cycle(self):
         """Self-improvement cycle - enhance capabilities"""
         logger.info("\n" + "=" * 60)
-        logger.info("🚀 IMPROVEMENT CYCLE")
+        logger.info(" IMPROVEMENT CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -321,7 +321,7 @@ class AutonomousAgent:
                     )
                     self.monitoring.record_metric(f"self_model.capability_{domain_name}", new_level)
             
-            logger.info(f"📊 Improved {len(improvements)} capabilities")
+            logger.info(f" Improved {len(improvements)} capabilities")
             for skill, result in improvements.items():
                 logger.info(f"   {skill}: {result['old_level']:.2%} → {result['new_level']:.2%}")
             
@@ -341,7 +341,7 @@ class AutonomousAgent:
     def reasoning_cycle(self):
         """Reasoning cycle - analyze and plan"""
         logger.info("\n" + "=" * 60)
-        logger.info("💭 REASONING CYCLE")
+        logger.info(" REASONING CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -352,11 +352,11 @@ class AutonomousAgent:
             for topic in topics:
                 result = self.reasoning.reason_about(topic, {})
                 reasoning_results.append(result)
-                logger.info(f"✅ Reasoned about '{topic}' - confidence: {result['confidence']:.2%}")
+                logger.info(f" Reasoned about '{topic}' - confidence: {result['confidence']:.2%}")
             
             # Get reasoning statistics
             stats = self.reasoning.get_reasoning_stats()
-            logger.info(f"📈 Reasoning Statistics:")
+            logger.info(f" Reasoning Statistics:")
             logger.info(f"   Total actions: {stats['total_actions']}")
             logger.info(f"   Success rate: {stats['success_rate']:.2%}")
             
@@ -369,7 +369,7 @@ class AutonomousAgent:
     def maintenance_cycle(self):
         """Maintenance cycle - clean and optimize"""
         logger.info("\n" + "=" * 60)
-        logger.info("🔧 MAINTENANCE CYCLE")
+        logger.info(" MAINTENANCE CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -389,9 +389,9 @@ class AutonomousAgent:
             mem_stats = self.memory.get_memory_statistics()
             integration_status = self.integration.get_integration_status()
             
-            logger.info("✅ All data persisted successfully")
-            logger.info(f"📊 Knowledge Base: {kb_stats['total_entries']} entries")
-            logger.info(f"🧠 Memory: {mem_stats['long_term_entries']} long-term, {mem_stats['episodic_entries']} episodes")
+            logger.info(" All data persisted successfully")
+            logger.info(f" Knowledge Base: {kb_stats['total_entries']} entries")
+            logger.info(f" Memory: {mem_stats['long_term_entries']} long-term, {mem_stats['episodic_entries']} episodes")
             logger.info(f"🔌 Integration Status: {integration_status['completed_cycles']} cycles completed")
             
             # Update monitoring
@@ -415,7 +415,7 @@ class AutonomousAgent:
     def memory_consolidation_cycle(self):
         """Memory consolidation cycle - prevent catastrophic forgetting"""
         logger.info("\n" + "=" * 60)
-        logger.info("🧠 MEMORY CONSOLIDATION CYCLE")
+        logger.info(" MEMORY CONSOLIDATION CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -439,7 +439,7 @@ class AutonomousAgent:
             
             consolidation_summary = self.memory_consolidation.get_consolidation_summary()
             
-            logger.info(f"✅ Memory consolidation complete")
+            logger.info(f" Memory consolidation complete")
             logger.info(f"   Rehearsals performed: {rehearsals_done}")
             logger.info(f"   High-stability memories: {consolidation_summary['high_stability_memories']}")
             
@@ -452,7 +452,7 @@ class AutonomousAgent:
     def autonomous_goal_generation_cycle(self):
         """Autonomous goal generation - create new goals based on state"""
         logger.info("\n" + "=" * 60)
-        logger.info("🎯 AUTONOMOUS GOAL GENERATION CYCLE")
+        logger.info(" AUTONOMOUS GOAL GENERATION CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -462,7 +462,7 @@ class AutonomousAgent:
             # Get active goals
             active_goals = self.goal_generator.get_active_goals()
             
-            logger.info(f"✅ Goal generation complete")
+            logger.info(f" Goal generation complete")
             logger.info(f"   New goals generated: {len(new_goals)}")
             logger.info(f"   Active goals: {len(active_goals)}")
             
@@ -480,7 +480,7 @@ class AutonomousAgent:
     def introspection_cycle(self):
         """Introspection cycle - self-awareness and analysis"""
         logger.info("\n" + "=" * 60)
-        logger.info("🔍 INTROSPECTION CYCLE")
+        logger.info(" INTROSPECTION CYCLE")
         logger.info("=" * 60)
         
         try:
@@ -508,7 +508,7 @@ class AutonomousAgent:
                                         evaluation.get('overall_score', 0))
             self.monitoring.record_metric("introspection.biases_detected", len(biases))
             
-            logger.info(f"✅ Introspection complete")
+            logger.info(f" Introspection complete")
             logger.info(f"   Overall score: {evaluation['overall_score']:.1%}")
             logger.info(f"   Biases detected: {len(biases)}")
             logger.info(f"   Diagnostics status: {diagnostics['capability_health']['status']}")
@@ -532,9 +532,9 @@ class AutonomousAgent:
         Executes 8 autonomous cycles in coordinated fashion with real-time metrics,
         event publishing, error recovery, and comprehensive monitoring.
         """
-        logger.info("\n" + "🔄" * 30)
+        logger.info("\n" + "" * 30)
         logger.info("STARTING ADVANCED AUTONOMOUS EVOLUTION LOOP v2.0")
-        logger.info("🔄" * 30)
+        logger.info("" * 30)
         
         self.is_running = True
         loop_start_time = time.time()
@@ -551,7 +551,7 @@ class AutonomousAgent:
                 
                 # Save state periodically
                 if self.coordinator.current_iteration % 5 == 0:
-                    logger.info("💾 Saving system state...")
+                    logger.info(" Saving system state...")
                     self.save_state()
                     self.self_model.save_self_model()
                     self.bayesian_reasoner.save_beliefs()
@@ -561,7 +561,7 @@ class AutonomousAgent:
             
             # Loop completed successfully
             loop_duration = time.time() - loop_start_time
-            logger.info("\n✅ Autonomous evolution loop completed successfully")
+            logger.info("\n Autonomous evolution loop completed successfully")
             logger.info(f"Total Duration: {loop_duration:.2f}s")
             
             # Print final comprehensive summary
@@ -569,7 +569,7 @@ class AutonomousAgent:
             self.print_monitoring_summary()
             
         except KeyboardInterrupt:
-            logger.info("\n⏸️ Loop interrupted by user")
+            logger.info("\n Loop interrupted by user")
         except Exception as e:
             logger.error(f"Fatal error in autonomous loop: {e}")
             self.integration.report_error_occurred("loop_fatal_error", "coordinator", {"error": str(e)})
@@ -583,7 +583,7 @@ class AutonomousAgent:
     def print_monitoring_summary(self):
         """Print monitoring and metrics summary"""
         logger.info("\n" + "=" * 80)
-        logger.info("📊 MONITORING & METRICS SUMMARY")
+        logger.info(" MONITORING & METRICS SUMMARY")
         logger.info("=" * 80)
         
         # System health
@@ -591,7 +591,7 @@ class AutonomousAgent:
         logger.info(f"\n💚 SYSTEM HEALTH: {system_health:.1f}/100")
         
         # Key metrics
-        logger.info(f"\n📈 KEY METRICS:")
+        logger.info(f"\n KEY METRICS:")
         key_metrics = self.monitoring.get_dashboard_data()
         
         metrics = key_metrics.get("key_metrics", {})
@@ -602,29 +602,29 @@ class AutonomousAgent:
         logger.info(f"   Self-Awareness: {metrics.get('self_awareness', 0):.1%}")
         
         # Cycle performance
-        logger.info(f"\n🔄 CYCLE PERFORMANCE:")
+        logger.info(f"\n CYCLE PERFORMANCE:")
         cycle_health = self.coordinator.get_cycle_health()
         for cycle, health in cycle_health.items():
-            status_icon = "✅" if health['status'] == "healthy" else "⚠️"
+            status_icon = "" if health['status'] == "healthy" else "⚠"
             logger.info(f"   {status_icon} {cycle:20} Success: {health['success_rate']:.1%}  "
                        f"Avg Time: {health['avg_duration']:.2f}s")
         
         # Component health
-        logger.info(f"\n🧠 COMPONENT HEALTH:")
+        logger.info(f"\n COMPONENT HEALTH:")
         for comp, status in self.monitoring.component_health.items():
-            status_icon = "✅" if status == "initialized" or status == "healthy" else "⚠️"
+            status_icon = "" if status == "initialized" or status == "healthy" else "⚠"
             logger.info(f"   {status_icon} {comp}: {status}")
         
         # Active alerts
         critical_alerts = self.monitoring.get_critical_alerts()
         if critical_alerts:
-            logger.info(f"\n🚨 CRITICAL ALERTS ({len(critical_alerts)}):")
+            logger.info(f"\n CRITICAL ALERTS ({len(critical_alerts)}):")
             for alert in critical_alerts[-5:]:
                 logger.warning(f"   [{alert['component']}] {alert['message']}")
         
         # Coordinator summary
         exec_summary = self.coordinator.get_execution_summary()
-        logger.info(f"\n📊 EXECUTION SUMMARY:")
+        logger.info(f"\n EXECUTION SUMMARY:")
         logger.info(f"   Total Iterations: {exec_summary['total_iterations']}")
         logger.info(f"   Completed Cycles: {exec_summary['completed_cycles']}")
         logger.info(f"   Failed Cycles: {exec_summary['failed_cycles']}")
@@ -637,26 +637,26 @@ class AutonomousAgent:
     def print_final_summary(self):
         """Print comprehensive final summary with advanced metrics"""
         logger.info("\n" + "=" * 80)
-        logger.info("🎓 ADVANCED AUTONOMOUS EVOLUTION SUMMARY")
+        logger.info(" ADVANCED AUTONOMOUS EVOLUTION SUMMARY")
         logger.info("=" * 80)
         
         # Knowledge summary
         kb_stats = self.kb.get_statistics()
-        logger.info(f"\n📚 KNOWLEDGE BASE:")
+        logger.info(f"\n KNOWLEDGE BASE:")
         logger.info(f"   Total entries: {kb_stats['total_entries']}")
         logger.info(f"   Type distribution: {kb_stats['types']}")
         logger.info(f"   Sources: {len(kb_stats['sources'])} different")
         
         # Learning summary
         learning_summary = self.learning.get_learning_summary()
-        logger.info(f"\n🎓 LEARNING PROGRESS:")
+        logger.info(f"\n LEARNING PROGRESS:")
         logger.info(f"   Learning events: {learning_summary['total_learning_events']}")
         logger.info(f"   Patterns discovered: {learning_summary['patterns_learned']}")
         logger.info(f"   Skills developed: {len(self.capabilities)}")
         
         # Self-Model Summary
         self_model_summary = self.self_model.get_self_model_summary()
-        logger.info(f"\n🔍 SELF-MODEL STATE:")
+        logger.info(f"\n SELF-MODEL STATE:")
         logger.info(f"   Registered capabilities: {self_model_summary['capabilities_count']}")
         logger.info(f"   Active capabilities: {self_model_summary['active_capabilities']}")
         logger.info(f"   Average confidence: {self_model_summary['average_confidence']:.1%}")
@@ -664,7 +664,7 @@ class AutonomousAgent:
         
         # Meta-Learning Summary
         meta_summary = self.meta_learner.get_meta_learning_summary()
-        logger.info(f"\n🧠 META-LEARNING:")
+        logger.info(f"\n META-LEARNING:")
         logger.info(f"   Learning strategies: {meta_summary['strategies_count']}")
         logger.info(f"   Domain experts: {meta_summary['domain_experts']}")
         logger.info(f"   Strategy history: {meta_summary['strategy_history_size']} entries")
@@ -672,7 +672,7 @@ class AutonomousAgent:
         
         # Bayesian Reasoning Summary
         bayesian_summary = self.bayesian_reasoner.get_bayesian_summary()
-        logger.info(f"\n🎯 BAYESIAN REASONING:")
+        logger.info(f"\n BAYESIAN REASONING:")
         logger.info(f"   Beliefs maintained: {bayesian_summary['beliefs_count']}")
         logger.info(f"   Evidence processed: {bayesian_summary['evidence_count']}")
         logger.info(f"   Inferences made: {bayesian_summary['inferences_made']}")
@@ -680,14 +680,14 @@ class AutonomousAgent:
         
         # Goal Generation Summary
         goal_summary = self.goal_generator.get_goal_generation_summary()
-        logger.info(f"\n🎯 AUTONOMOUS GOALS:")
+        logger.info(f"\n AUTONOMOUS GOALS:")
         logger.info(f"   Total generated: {goal_summary['total_generated']}")
         logger.info(f"   Currently active: {goal_summary['active_goals']}")
         logger.info(f"   Completed: {goal_summary['completed_goals']}")
         
         # Memory Summary
         mem_stats = self.memory.get_memory_statistics()
-        logger.info(f"\n🧠 MEMORY SYSTEM:")
+        logger.info(f"\n MEMORY SYSTEM:")
         logger.info(f"   Long-term entries: {mem_stats['long_term_entries']}")
         logger.info(f"   Episodic entries: {mem_stats['episodic_entries']}")
         logger.info(f"   Short-term entries: {mem_stats['short_term_entries']}")
@@ -699,7 +699,7 @@ class AutonomousAgent:
         
         # Introspection Summary
         intro_summary = self.introspection.get_introspection_summary()
-        logger.info(f"\n🔍 INTROSPECTION:")
+        logger.info(f"\n INTROSPECTION:")
         logger.info(f"   Reasoning traces: {intro_summary['reasoning_traces']}")
         logger.info(f"   Pattern categories: {intro_summary['pattern_categories']}")
         logger.info(f"   Anomalies detected: {intro_summary['anomalies_detected']}")
@@ -707,26 +707,26 @@ class AutonomousAgent:
         
         # Error Recovery Summary
         recovery_stats = self.error_recovery.get_recovery_stats()
-        logger.info(f"\n🛡️ ERROR RECOVERY:")
+        logger.info(f"\n ERROR RECOVERY:")
         logger.info(f"   Total errors: {recovery_stats['total_errors']}")
         logger.info(f"   Successfully recovered: {recovery_stats['recovered_errors']}")
         logger.info(f"   Recovery rate: {recovery_stats['recovery_rate']:.1%}")
         
         # Reasoning summary
         reasoning_stats = self.reasoning.get_reasoning_stats()
-        logger.info(f"\n💭 REASONING STATISTICS:")
+        logger.info(f"\n REASONING STATISTICS:")
         logger.info(f"   Total actions: {reasoning_stats['total_actions']}")
         logger.info(f"   Success rate: {reasoning_stats['success_rate']:.1%}")
         logger.info(f"   Decisions made: {reasoning_stats['decisions_made']}")
         logger.info(f"   Active goals: {reasoning_stats['total_goals']}")
         
-        logger.info(f"\n🔄 EVOLUTION STATISTICS:")
+        logger.info(f"\n EVOLUTION STATISTICS:")
         logger.info(f"   Total iterations: {self.iteration_count}")
         logger.info("=" * 80)
     
     def query(self, question: str) -> Dict[str, Any]:
         """Query the AI agent about something"""
-        logger.info(f"\n❓ Query: {question}")
+        logger.info(f"\n Query: {question}")
         
         # Search knowledge base
         knowledge = self.kb.search(question, top_k=3)
@@ -742,5 +742,5 @@ class AutonomousAgent:
             "next_questions": reasoning.get("next_questions", [])
         }
         
-        logger.info(f"✅ Query processed - confidence: {response['confidence']:.2%}")
+        logger.info(f" Query processed - confidence: {response['confidence']:.2%}")
         return response

@@ -35,7 +35,7 @@ class AutonomousGoalGenerator:
         
         self._initialize_motivation_sources()
         self.load_generated_goals()
-        logger.info("🎯 Autonomous Goal Generator initialized")
+        logger.info(" Autonomous Goal Generator initialized")
     
     def _initialize_motivation_sources(self):
         """Initialize sources of intrinsic motivation"""
@@ -54,7 +54,7 @@ class AutonomousGoalGenerator:
                     data = json.load(f)
                     self.generated_goals = data.get("goals", [])
                     self.fulfilled_goals = data.get("fulfilled", [])
-            logger.info(f"📂 Loaded {len(self.generated_goals)} autonomous goals")
+            logger.info(f" Loaded {len(self.generated_goals)} autonomous goals")
         except Exception as e:
             logger.error(f"Error loading goals: {e}")
     
@@ -68,13 +68,13 @@ class AutonomousGoalGenerator:
             }
             with open(self.goals_file, 'w') as f:
                 json.dump(goals_data, f, indent=2)
-            logger.debug("💾 Autonomous goals saved")
+            logger.debug(" Autonomous goals saved")
         except Exception as e:
             logger.error(f"Error saving goals: {e}")
     
     def generate_goals_autonomously(self) -> List[Dict]:
         """Generate goals based on current state and motivations"""
-        logger.info("🧠 Generating autonomous goals...")
+        logger.info(" Generating autonomous goals...")
         
         new_goals = []
         
@@ -102,7 +102,7 @@ class AutonomousGoalGenerator:
         for goal in new_goals:
             self._register_goal(goal)
         
-        logger.info(f"✅ Generated {len(new_goals)} autonomous goals")
+        logger.info(f" Generated {len(new_goals)} autonomous goals")
         return new_goals
     
     def _generate_capability_gap_goals(self) -> List[Dict]:
@@ -298,7 +298,7 @@ class AutonomousGoalGenerator:
                 return
         
         self.generated_goals.append(goal)
-        logger.info(f"✅ Registered goal: {goal['name']} (priority={goal.get('priority', 0):.1%})")
+        logger.info(f" Registered goal: {goal['name']} (priority={goal.get('priority', 0):.1%})")
     
     def mark_goal_fulfilled(self, goal_id: int) -> bool:
         """Mark a goal as fulfilled"""
@@ -311,7 +311,7 @@ class AutonomousGoalGenerator:
                 self.fulfilled_goals.append(goal)
                 self.generated_goals.remove(goal)
                 
-                logger.info(f"✅ Goal completed: {goal['name']}")
+                logger.info(f" Goal completed: {goal['name']}")
                 
                 # Generate follow-up goals
                 self._generate_follow_up_goals(goal)

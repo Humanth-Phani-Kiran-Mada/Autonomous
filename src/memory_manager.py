@@ -22,7 +22,7 @@ class MemoryManager:
         self.episodic_file = config.MEMORY_DIR / "episodic_memory.json"
         
         self.load_memory()
-        logger.info("🧠 Memory Manager initialized")
+        logger.info(" Memory Manager initialized")
     
     def load_memory(self):
         """Load memory from persistent storage"""
@@ -32,12 +32,12 @@ class MemoryManager:
                     data = json.load(f)
                     self.long_term_memory = data.get("long_term", {})
                     self.short_term_memory = data.get("short_term", {})
-                logger.info(f"📚 Loaded memory: {len(self.long_term_memory)} long-term entries")
+                logger.info(f" Loaded memory: {len(self.long_term_memory)} long-term entries")
             
             if self.episodic_file.exists():
                 with open(self.episodic_file, 'r') as f:
                     self.episodic_memory = json.load(f)
-                logger.info(f"📖 Loaded {len(self.episodic_memory)} episodic memories")
+                logger.info(f" Loaded {len(self.episodic_memory)} episodic memories")
         except Exception as e:
             logger.error(f"Error loading memory: {e}")
     
@@ -61,7 +61,7 @@ class MemoryManager:
             with open(self.episodic_file, 'w') as f:
                 json.dump(self.episodic_memory, f, indent=2)
             
-            logger.debug("💾 Memory saved to disk")
+            logger.debug(" Memory saved to disk")
         except Exception as e:
             logger.error(f"Error saving memory: {e}")
     
@@ -82,14 +82,14 @@ class MemoryManager:
             "importance": min(max(importance, 0), 1.0),
             "access_count": 0
         }
-        logger.debug(f"💾 Long-term memory: {key}")
+        logger.debug(f" Long-term memory: {key}")
     
     def retrieve_short_term(self, key: str) -> Any:
         """Retrieve from short-term memory"""
         if key in self.short_term_memory:
             entry = self.short_term_memory[key]
             if datetime.fromisoformat(entry["expires_at"]) > datetime.now():
-                logger.debug(f"✅ Retrieved short-term: {key}")
+                logger.debug(f" Retrieved short-term: {key}")
                 return entry["value"]
             else:
                 del self.short_term_memory[key]
@@ -101,7 +101,7 @@ class MemoryManager:
         if key in self.long_term_memory:
             entry = self.long_term_memory[key]
             entry["access_count"] += 1
-            logger.debug(f"✅ Retrieved long-term: {key}")
+            logger.debug(f" Retrieved long-term: {key}")
             return entry["value"]
         return None
     
@@ -134,7 +134,7 @@ class MemoryManager:
             del self.short_term_memory[key]
         
         if expired_keys:
-            logger.debug(f"🗑️ Cleaned up {len(expired_keys)} expired short-term memories")
+            logger.debug(f"🗑 Cleaned up {len(expired_keys)} expired short-term memories")
     
     def get_learning_insights(self) -> Dict:
         """Extract learning insights from episodic memory"""

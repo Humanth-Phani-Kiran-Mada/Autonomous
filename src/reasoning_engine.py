@@ -20,7 +20,7 @@ class ReasoningEngine:
         
         self.goals_file = config.DATA_DIR / "goals.json"
         self.load_goals()
-        logger.info("🧠 Reasoning Engine initialized")
+        logger.info(" Reasoning Engine initialized")
     
     def load_goals(self):
         """Load goals from disk"""
@@ -56,7 +56,7 @@ class ReasoningEngine:
         }
         
         self.goals.append(goal)
-        logger.info(f"🎯 Goal created: {goal_name}")
+        logger.info(f" Goal created: {goal_name}")
         self.memory.store_long_term(f"goal_{goal['id']}", goal, importance=goal["priority"])
         
         return goal
@@ -70,7 +70,7 @@ class ReasoningEngine:
         goal = self.goals[goal_id]
         goal["sub_goals"] = sub_goals
         
-        logger.info(f"📋 Decomposed goal '{goal['name']}' into {len(sub_goals)} sub-goals")
+        logger.info(f" Decomposed goal '{goal['name']}' into {len(sub_goals)} sub-goals")
         
         # Store decomposition as learning
         self.memory.store_episode(
@@ -130,7 +130,7 @@ class ReasoningEngine:
         }
         
         self.decision_log.append(decision)
-        logger.info(f"✅ Decision made with confidence: {best_score:.2%}")
+        logger.info(f" Decision made with confidence: {best_score:.2%}")
         
         return decision
     
@@ -157,7 +157,7 @@ class ReasoningEngine:
     
     def reason_about(self, topic: str, context: Dict) -> Dict:
         """Perform reasoning about a topic"""
-        logger.info(f"💭 Reasoning about: {topic}")
+        logger.info(f" Reasoning about: {topic}")
         
         # Gather relevant knowledge
         knowledge_items = self.kb.search(topic, top_k=10)
@@ -172,7 +172,7 @@ class ReasoningEngine:
             "next_questions": self._generate_follow_up_questions(topic, knowledge_items)
         }
         
-        logger.info(f"🎓 Reasoning complete - confidence: {reasoning_result['confidence']:.2%}")
+        logger.info(f" Reasoning complete - confidence: {reasoning_result['confidence']:.2%}")
         
         return reasoning_result
     
@@ -211,7 +211,7 @@ class ReasoningEngine:
         }
         
         self.action_history.append(action_record)
-        logger.info(f"📝 Action recorded: {action_type} - {'✅' if successful else '❌'}")
+        logger.info(f"📝 Action recorded: {action_type} - {'' if successful else ''}")
         
         # Update skills based on success
         if successful:

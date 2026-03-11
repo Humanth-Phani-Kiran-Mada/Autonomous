@@ -72,7 +72,7 @@ class EventBus:
         # Sort by priority descending
         self.subscribers[event_type].sort(key=lambda x: x[1], reverse=True)
         sub_id = f"{event_type}_{id(handler)}"
-        logger.debug(f"📡 Subscribed {handler.__name__} to {event_type}")
+        logger.debug(f" Subscribed {handler.__name__} to {event_type}")
         return sub_id
     
     def unsubscribe(self, event_type: str, handler: Callable):
@@ -113,7 +113,7 @@ class EventBus:
                 if response:
                     event.responses[handler.__name__] = response
             except Exception as e:
-                logger.error(f"❌ Error in handler {handler.__name__}: {e}")
+                logger.error(f" Error in handler {handler.__name__}: {e}")
                 event.responses[handler.__name__] = {"error": str(e)}
         
         return event.responses

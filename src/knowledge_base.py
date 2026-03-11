@@ -31,14 +31,14 @@ class KnowledgeBase:
         self.model = None
         if EMBEDDINGS_AVAILABLE:
             try:
-                logger.info("🤖 Loading embedding model...")
+                logger.info(" Loading embedding model...")
                 self.model = SentenceTransformer(config.KNOWLEDGE_EMBEDDING_MODEL)
-                logger.info("✅ Embedding model loaded")
+                logger.info(" Embedding model loaded")
             except Exception as e:
                 logger.error(f"Failed to load embedding model: {e}")
         
         self.load_knowledge_base()
-        logger.info("💾 Knowledge Base initialized")
+        logger.info(" Knowledge Base initialized")
     
     def load_knowledge_base(self):
         """Load knowledge base from disk"""
@@ -46,12 +46,12 @@ class KnowledgeBase:
             if self.kb_file.exists():
                 with open(self.kb_file, 'r') as f:
                     self.entries = json.load(f)
-                logger.info(f"📂 Loaded {len(self.entries)} knowledge entries")
+                logger.info(f" Loaded {len(self.entries)} knowledge entries")
             
             if self.embeddings_file.exists() and self.model:
                 with open(self.embeddings_file, 'rb') as f:
                     self.embeddings = pickle.load(f)
-                logger.info(f"🔍 Loaded {len(self.embeddings)} embeddings")
+                logger.info(f" Loaded {len(self.embeddings)} embeddings")
         except Exception as e:
             logger.error(f"Error loading knowledge base: {e}")
     
@@ -67,7 +67,7 @@ class KnowledgeBase:
                 with open(self.embeddings_file, 'wb') as f:
                     pickle.dump(self.embeddings, f)
             
-            logger.debug("💾 Knowledge base saved to disk")
+            logger.debug(" Knowledge base saved to disk")
         except Exception as e:
             logger.error(f"Error saving knowledge base: {e}")
     
@@ -135,7 +135,7 @@ class KnowledgeBase:
                         entry["accessed_count"] += 1
                         results.append(entry)
                 
-                logger.info(f"🔍 Semantic search found {len(results)} results for: {query[:50]}")
+                logger.info(f" Semantic search found {len(results)} results for: {query[:50]}")
             except Exception as e:
                 logger.warning(f"Semantic search failed, falling back to keyword search: {e}")
                 results = self._keyword_search(query, top_k)
@@ -166,7 +166,7 @@ class KnowledgeBase:
     
     def _prune_knowledge(self):
         """Remove least relevant knowledge when reaching limit"""
-        logger.info("🗑️ Pruning knowledge base...")
+        logger.info("🗑 Pruning knowledge base...")
         
         # Score entries by relevance
         for entry in self.entries:
@@ -193,7 +193,7 @@ class KnowledgeBase:
             except Exception as e:
                 logger.warning(f"Failed to rebuild embeddings: {e}")
         
-        logger.info(f"✂️ Pruned {removed_count} entries, kept {len(self.entries)}")
+        logger.info(f"✂ Pruned {removed_count} entries, kept {len(self.entries)}")
     
     def get_statistics(self) -> Dict:
         """Get knowledge base statistics"""

@@ -33,7 +33,7 @@ class MetaLearner:
         
         self._initialize_strategies()
         self.load_meta_learning_state()
-        logger.info("🧠 Meta-Learning Engine initialized")
+        logger.info(" Meta-Learning Engine initialized")
     
     def _initialize_strategies(self):
         """Initialize default learning strategies"""
@@ -100,7 +100,7 @@ class MetaLearner:
                 with open(self.meta_metrics_file, 'r') as f:
                     self.meta_metrics = json.load(f)
             
-            logger.info("📂 Meta-learning state loaded")
+            logger.info(" Meta-learning state loaded")
         except Exception as e:
             logger.error(f"Error loading meta-learning state: {e}")
     
@@ -113,7 +113,7 @@ class MetaLearner:
             with open(self.meta_metrics_file, 'w') as f:
                 json.dump(self.meta_metrics, f, indent=2)
             
-            logger.debug("💾 Meta-learning state saved")
+            logger.debug(" Meta-learning state saved")
         except Exception as e:
             logger.error(f"Error saving meta-learning state: {e}")
     
@@ -134,7 +134,7 @@ class MetaLearner:
         
         strategy_name, strategy_config = best_strategy
         
-        logger.info(f"📋 Selected strategy: {strategy_name} for domain: {domain}")
+        logger.info(f" Selected strategy: {strategy_name} for domain: {domain}")
         return strategy_name, strategy_config
     
     def execute_with_strategy(self, strategy_name: str, task: Callable, 
@@ -165,7 +165,7 @@ class MetaLearner:
             # Update strategy effectiveness
             self._update_strategy_effectiveness(strategy_name, True, result.get("performance", 0.5))
             
-            logger.info(f"✅ Strategy executed: {strategy_name}")
+            logger.info(f" Strategy executed: {strategy_name}")
         
         except Exception as e:
             execution_record["status"] = "error"
@@ -175,7 +175,7 @@ class MetaLearner:
             # Update strategy effectiveness
             self._update_strategy_effectiveness(strategy_name, False, 0.0)
             
-            logger.error(f"❌ Strategy execution failed: {e}")
+            logger.error(f" Strategy execution failed: {e}")
         
         self.strategy_history.append(execution_record)
         return execution_record
@@ -193,7 +193,7 @@ class MetaLearner:
             strategy["success_rate"] = (strategy["success_rate"] * (strategy["usage_count"] - 1)) / strategy["usage_count"]
             strategy["effectiveness"] = max(strategy["effectiveness"] - 0.05, 0.0)
         
-        logger.debug(f"📊 Updated {strategy_name}: effectiveness={strategy['effectiveness']:.2%}, success_rate={strategy['success_rate']:.2%}")
+        logger.debug(f" Updated {strategy_name}: effectiveness={strategy['effectiveness']:.2%}, success_rate={strategy['success_rate']:.2%}")
     
     def adapt_learning_parameters(self, strategy_name: str, domain: str, 
                                   performance_feedback: float):
@@ -234,7 +234,7 @@ class MetaLearner:
                 adaptation["changes"]["learning_rate"] = f"↓ {params['learning_rate']}"
         
         self.adaptation_history.append(adaptation)
-        logger.info(f"🔧 Adapted parameters for {strategy_name}: {adaptation['changes']}")
+        logger.info(f" Adapted parameters for {strategy_name}: {adaptation['changes']}")
     
     def register_domain_expert(self, domain: str, expert_knowledge: Dict):
         """Register domain-specific learning expertise"""
@@ -252,7 +252,7 @@ class MetaLearner:
         """Get domain-specific learning strategy"""
         if domain in self.domain_experts:
             expert = self.domain_experts[domain]
-            logger.info(f"🎯 Using domain expert knowledge for: {domain}")
+            logger.info(f" Using domain expert knowledge for: {domain}")
             return expert["knowledge"]
         else:
             # Generate generic strategy
@@ -270,7 +270,7 @@ class MetaLearner:
     
     def learn_from_failure(self, failed_task: Dict, failure_context: Dict) -> Dict:
         """Learn from failures and adjust strategy"""
-        logger.info(f"🔍 Analyzing failure: {failed_task.get('task_name', 'unknown')}")
+        logger.info(f" Analyzing failure: {failed_task.get('task_name', 'unknown')}")
         
         failure_analysis = {
             "timestamp": datetime.now().isoformat(),
@@ -300,7 +300,7 @@ class MetaLearner:
             capability=failed_task.get("capability", "learning")
         )
         
-        logger.info(f"📋 Analysis complete: {len(failure_analysis['recommended_changes'])} recommendations")
+        logger.info(f" Analysis complete: {len(failure_analysis['recommended_changes'])} recommendations")
         return failure_analysis
     
     def get_meta_learning_summary(self) -> Dict:
@@ -324,7 +324,7 @@ class MetaLearner:
     
     def recommend_learning_path(self, goal: str, current_capabilities: Dict) -> List[Dict]:
         """Recommend optimal learning path to achieve a goal"""
-        logger.info(f"🗺️ Planning learning path for: {goal}")
+        logger.info(f"🗺 Planning learning path for: {goal}")
         
         path = []
         gap_analysis = {goal: {"target": 1.0, "current": current_capabilities.get(goal, 0.0)}}

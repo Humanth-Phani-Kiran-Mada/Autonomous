@@ -24,7 +24,7 @@ class LearningEngine:
         self.skills_file = config.DATA_DIR / "skill_levels.json"
         
         self.load_metrics()
-        logger.info("🎓 Learning Engine initialized")
+        logger.info(" Learning Engine initialized")
     
     def load_metrics(self):
         """Load learning metrics from disk"""
@@ -52,7 +52,7 @@ class LearningEngine:
     
     def learn_from_knowledge(self, knowledge_item: Dict) -> Dict:
         """Process and learn from a knowledge item"""
-        logger.info(f"📚 Learning from: {knowledge_item.get('content', '')[:50]}")
+        logger.info(f" Learning from: {knowledge_item.get('content', '')[:50]}")
         
         learning_result = {
             "timestamp": datetime.now().isoformat(),
@@ -72,7 +72,7 @@ class LearningEngine:
             outcomes=learning_result["categories"]
         )
         
-        logger.info(f"✅ Learning result: {learning_result['categories']}")
+        logger.info(f" Learning result: {learning_result['categories']}")
         return learning_result
     
     def improve_skill(self, skill_name: str, practice_data: List[Dict]) -> Dict:
@@ -97,7 +97,7 @@ class LearningEngine:
         self.skill_levels[skill_name] = new_level
         self.improvement_history.append(improvement_record)
         
-        logger.info(f"🚀 Improved skill '{skill_name}': {current_level:.2%} → {new_level:.2%}")
+        logger.info(f" Improved skill '{skill_name}': {current_level:.2%} → {new_level:.2%}")
         
         # Store as learning episode
         self.memory.store_episode(
@@ -126,11 +126,11 @@ class LearningEngine:
             if existing["name"] == pattern_name:
                 existing["times_observed"] += 1
                 existing["confidence"] = min(existing["confidence"] + 0.1, 1.0)
-                logger.info(f"🔄 Pattern reinforced: {pattern_name}")
+                logger.info(f" Pattern reinforced: {pattern_name}")
                 return existing
         
         self.learned_patterns.append(pattern)
-        logger.info(f"🎯 New pattern discovered: {pattern_name}")
+        logger.info(f" New pattern discovered: {pattern_name}")
         
         # Store pattern knowledge
         self.kb.add_knowledge(

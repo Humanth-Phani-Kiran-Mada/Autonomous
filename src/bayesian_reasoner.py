@@ -29,7 +29,7 @@ class BayesianReasoner:
         
         self._initialize_base_beliefs()
         self.load_beliefs()
-        logger.info("🎯 Bayesian Reasoning Core initialized")
+        logger.info(" Bayesian Reasoning Core initialized")
     
     def _initialize_base_beliefs(self):
         """Initialize base beliefs about the world and AI capabilities"""
@@ -50,7 +50,7 @@ class BayesianReasoner:
                     data = json.load(f)
                     self.beliefs = data.get("beliefs", {})
                     self.prior_knowledge.update(data.get("prior_knowledge", {}))
-            logger.info("📂 Bayesian beliefs loaded")
+            logger.info(" Bayesian beliefs loaded")
         except Exception as e:
             logger.error(f"Error loading beliefs: {e}")
     
@@ -64,7 +64,7 @@ class BayesianReasoner:
             }
             with open(self.beliefs_file, 'w') as f:
                 json.dump(beliefs_data, f, indent=2)
-            logger.debug("💾 Bayesian beliefs saved")
+            logger.debug(" Bayesian beliefs saved")
         except Exception as e:
             logger.error(f"Error saving beliefs: {e}")
     
@@ -122,7 +122,7 @@ class BayesianReasoner:
         }
         self.evidence_log.append(evidence_record)
         
-        logger.debug(f"🔄 Belief updated: {belief_name} {prior_mean:.3f} → {belief['mean']:.3f}")
+        logger.debug(f" Belief updated: {belief_name} {prior_mean:.3f} → {belief['mean']:.3f}")
     
     def get_belief_probability(self, belief_name: str, threshold: float = None) -> Tuple[float, float]:
         """Get probability estimate and confidence for a belief"""
@@ -149,7 +149,7 @@ class BayesianReasoner:
         if evidence is None:
             evidence = []
         
-        logger.info(f"🧠 Bayesian reasoning about: {subject}")
+        logger.info(f" Bayesian reasoning about: {subject}")
         
         reasoning = {
             "subject": subject,
@@ -188,7 +188,7 @@ class BayesianReasoner:
                                                             posterior)
         
         self.inference_history.append(reasoning)
-        logger.info(f"✅ Reasoning complete: P({subject}) = {posterior:.2%} ± {1-reasoning['confidence']:.2%}")
+        logger.info(f" Reasoning complete: P({subject}) = {posterior:.2%} ± {1-reasoning['confidence']:.2%}")
         
         return reasoning
     
@@ -230,7 +230,7 @@ class BayesianReasoner:
             "confidence": min(len(relevant_beliefs) / 5, 1.0) if relevant_beliefs else 0.5
         }
         
-        logger.info(f"✅ Prediction: {action} success probability = {success_likelihood:.2%}")
+        logger.info(f" Prediction: {action} success probability = {success_likelihood:.2%}")
         
         return prediction
     
@@ -273,7 +273,7 @@ class BayesianReasoner:
     
     def decision_analysis(self, options: List[Dict], criteria: Dict) -> Dict:
         """Bayesian decision analysis for comparing options"""
-        logger.info(f"⚖️ Making Bayesian decision among {len(options)} options")
+        logger.info(f"⚖ Making Bayesian decision among {len(options)} options")
         
         weighted_utilities = {}
         
@@ -305,7 +305,7 @@ class BayesianReasoner:
             "confidence": min(best_utility, 1.0)
         }
         
-        logger.info(f"✅ Decision: Option {best_option_id} (utility={best_utility:.2%})")
+        logger.info(f" Decision: Option {best_option_id} (utility={best_utility:.2%})")
         
         return decision
     

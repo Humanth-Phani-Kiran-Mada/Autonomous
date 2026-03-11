@@ -1,82 +1,82 @@
 # Self-Evolving AI System - Architecture & Design
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│         AUTONOMOUS AGENT (Orchestrator)                 │
-├─────────────────────────────────────────────────────────┤
-│  - Manages all components                               │
-│  - Runs autonomous loops                                │
-│  - Coordinates cycles (crawl, learn, reason, improve)   │
-└─────────────────────────────────────────────────────────┘
-         │           │           │           │
-         ▼           ▼           ▼           ▼
-    ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌──────────┐
-    │ WEB     │ │KNOWLEDGE│ │ LEARNING│ │REASONING │
-    │CRAWLER  │ │ BASE    │ │ ENGINE  │ │ENGINE    │
-    └─────────┘ └─────────┘ └─────────┘ └──────────┘
-         │           │           │           │
-         ▼           ▼           ▼           ▼
-    ┌─────────────────────────────────────────────────┐
-    │        MEMORY MANAGER                           │
-    │  - Short-term (temporary)                       │
-    │  - Long-term (persistent)                       │
-    │  - Episodic (experiences)                       │
-    └─────────────────────────────────────────────────┘
-         │
-         ▼
-    ┌─────────────────────────────────────────────────┐
-    │   PERSISTENT STORAGE (Disk)                     │
-    │  - JSON files                                   │
-    │  - Embeddings                                   │
-    │  - Training data                                │
-    └─────────────────────────────────────────────────┘
+┌-┐
+│ AUTONOMOUS AGENT (Orchestrator) │
+├-┤
+│ - Manages all components │
+│ - Runs autonomous loops │
+│ - Coordinates cycles (crawl, learn, reason, improve) │
+└-┘
+ │ │ │ │
+ ▼ ▼ ▼ ▼
+ ┌-┐ ┌-┐ ┌-┐ ┌-┐
+ │ WEB │ │KNOWLEDGE│ │ LEARNING│ │REASONING │
+ │CRAWLER │ │ BASE │ │ ENGINE │ │ENGINE │
+ └-┘ └-┘ └-┘ └-┘
+ │ │ │ │
+ ▼ ▼ ▼ ▼
+ ┌-┐
+ │ MEMORY MANAGER │
+ │ - Short-term (temporary) │
+ │ - Long-term (persistent) │
+ │ - Episodic (experiences) │
+ └-┘
+ │
+ ▼
+ ┌-┐
+ │ PERSISTENT STORAGE (Disk) │
+ │ - JSON files │
+ │ - Embeddings │
+ │ - Training data │
+ └-┘
 ```
 
-## 🔄 Autonomous Learning Loop
+## Autonomous Learning Loop
 
 ### Iteration Cycle (5 Stages)
 
 ```
-Stage 1: CRAWLING CYCLE 🕷️
-  - Discover web sources
-  - Fetch content
-  - Cache results
-  
-  ↓
-  
-Stage 2: LEARNING CYCLE 📚
-  - Extract knowledge from content
-  - Categorize information
-  - Create embeddings
-  - Update knowledge base
-  
-  ↓
-  
-Stage 3: REASONING CYCLE 💭
-  - Analyze knowledge
-  - Reason about topics
-  - Plan actions
-  - Make decisions
-  
-  ↓
-  
-Stage 4: IMPROVEMENT CYCLE 🚀
-  - Identify skill gaps
-  - Practice improvements
-  - Update capabilities
-  - Record progress
-  
-  ↓
-  
-Stage 5: MAINTENANCE CYCLE 🔧
-  - Save all data
-  - Optimize storage
-  - Generate reports
-  - Validate integrity
-  
-  ↓ (Loop back to Stage 1)
+Stage 1: CRAWLING CYCLE 
+ - Discover web sources
+ - Fetch content
+ - Cache results
+ 
+ ↓
+ 
+Stage 2: LEARNING CYCLE 
+ - Extract knowledge from content
+ - Categorize information
+ - Create embeddings
+ - Update knowledge base
+ 
+ ↓
+ 
+Stage 3: REASONING CYCLE 
+ - Analyze knowledge
+ - Reason about topics
+ - Plan actions
+ - Make decisions
+ 
+ ↓
+ 
+Stage 4: IMPROVEMENT CYCLE 
+ - Identify skill gaps
+ - Practice improvements
+ - Update capabilities
+ - Record progress
+ 
+ ↓
+ 
+Stage 5: MAINTENANCE CYCLE 
+ - Save all data
+ - Optimize storage
+ - Generate reports
+ - Validate integrity
+ 
+ ↓ (Loop back to Stage 1)
 ```
 
 ## 📦 Component Details
@@ -101,10 +101,10 @@ Stage 5: MAINTENANCE CYCLE 🔧
 
 **Data Output:**
 - Knowledge items with:
-  - Source URL
-  - Content text
-  - Type (Article, Link, Header, etc.)
-  - Timestamp
+ - Source URL
+ - Content text
+ - Type (Article, Link, Header, etc.)
+ - Timestamp
 
 ### 2. Knowledge Base (`knowledge_base.py`)
 
@@ -126,13 +126,13 @@ Stage 5: MAINTENANCE CYCLE 🔧
 **Storage Structure:**
 ```
 Entries: {
-  id: unique identifier
-  content: text information
-  source: where learned from
-  type: knowledge category
-  created_at: timestamp
-  accessed_count: usage frequency
-  relevance_score: importance (0-1)
+ id: unique identifier
+ content: text information
+ source: where learned from
+ type: knowledge category
+ created_at: timestamp
+ accessed_count: usage frequency
+ relevance_score: importance (0-1)
 }
 ```
 
@@ -143,22 +143,22 @@ Entries: {
 **Memory Types:**
 
 1. **Short-term Memory**
-   - Temporary working memory
-   - Expires automatically (TTL)
-   - High speed access
-   - Example: Current query context
+ - Temporary working memory
+ - Expires automatically (TTL)
+ - High speed access
+ - Example: Current query context
 
 2. **Long-term Memory**
-   - Permanent important facts
-   - Persistent storage
-   - Tracked access frequency
-   - Example: Learned skills
+ - Permanent important facts
+ - Persistent storage
+ - Tracked access frequency
+ - Example: Learned skills
 
 3. **Episodic Memory**
-   - Experiences and events
-   - Timestamp and context
-   - Importance rating
-   - Used for learning patterns
+ - Experiences and events
+ - Timestamp and context
+ - Importance rating
+ - Used for learning patterns
 
 **Methods:**
 - `store_short_term()` - Temporary storage
@@ -209,7 +209,7 @@ Entries: {
 5. Record decision
 
 **Reasoning Chain:**
-- Search knowledge → Extract insights → Calculate confidence → Generate questions
+- Search knowledge -> Extract insights -> Calculate confidence -> Generate questions
 
 ### 6. Autonomous Agent (`autonomous_agent.py`)
 
@@ -225,59 +225,59 @@ Entries: {
 **Agent Lifecycle:**
 ```
 Initialize Components
-        ↓
+ ↓
 Load Saved State
-        ↓
+ ↓
 Set Goals
-        ↓
+ ↓
 Start Autonomous Loop
-    (Iterations)
-        ↓
+ (Iterations)
+ ↓
 Periodic State Save
-        ↓
+ ↓
 Generate Summary
 ```
 
-## 💾 Data Storage
+## Data Storage
 
 ```
 data/
-├── memory/
-│   ├── memory_state.json        # Current memory state
-│   └── episodic_memory.json     # Experience records
-├── knowledge/
-│   ├── knowledge_base.json      # All learned facts
-│   ├── embeddings.pkl           # Vector embeddings
-│   └── metadata.json            # Knowledge metadata
-├── cache/
-│   └── *.json                   # Cached web content
-├── crawler_state.json           # Crawling history
-├── learning_metrics.json        # Learning progress
-├── skill_levels.json            # Developed skills
-├── goals.json                   # Agent goals
-└── agent_state.json             # Overall state
+├- memory/
+│ ├- memory_state.json # Current memory state
+│ └- episodic_memory.json # Experience records
+├- knowledge/
+│ ├- knowledge_base.json # All learned facts
+│ ├- embeddings.pkl # Vector embeddings
+│ └- metadata.json # Knowledge metadata
+├- cache/
+│ └- *.json # Cached web content
+├- crawler_state.json # Crawling history
+├- learning_metrics.json # Learning progress
+├- skill_levels.json # Developed skills
+├- goals.json # Agent goals
+└- agent_state.json # Overall state
 
 logs/
-├── ai_evolution.log             # All operations
-└── errors.log                   # Errors only
+├- ai_evolution.log # All operations
+└- errors.log # Errors only
 ```
 
-## 🧠 Knowledge Representation
+## Knowledge Representation
 
 ### Knowledge Entry Format
 ```json
 {
-  "id": "KB_2024010112345_0",
-  "content": "Knowledge text...",
-  "source": "https://example.com",
-  "type": "article",
-  "created_at": "2024-01-01T12:34:56",
-  "accessed_count": 5,
-  "relevance_score": 0.85,
-  "metadata": {
-    "category": "AI",
-    "tags": ["learning", "improvement"]
-  }
+ "id": "KB_2024010112345_0",
+ "content": "Knowledge text...",
+ "source": "https://example.com",
+ "type": "article",
+ "created_at": "2024-01-01T12:34:56",
+ "accessed_count": 5,
+ "relevance_score": 0.85,
+ "metadata": {
+ "category": "AI",
+ "tags": ["learning", "improvement"]
+ }
 }
 ```
 
@@ -287,23 +287,23 @@ logs/
 - Enables semantic search
 - Persisted in pickle format
 
-## 🎯 Self-Improvement Mechanisms
+## Self-Improvement Mechanisms
 
 ### Skill Development Loop
 ```
 Current Skill Level (0-1)
-        ↓
+ ↓
 Identify Practice Area
-        ↓
+ ↓
 Execute Practice Iterations
-        ↓
+ ↓
 Measure Success Rate
-        ↓
+ ↓
 Calculate Improvement
-  = Success_Rate × Learning_Rate
-        ↓
+ = Success_Rate × Learning_Rate
+ ↓
 New Level = Old Level + Improvement
-        ↓
+ ↓
 Cap at 1.0 (100%)
 ```
 
@@ -312,28 +312,28 @@ Cap at 1.0 (100%)
 - **Exploitation**: Deep dive known areas (80% of actions)
 - **Adjustment**: Modify rate based on results
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 ### Tracked Statistics
 1. **Knowledge Metrics**
-   - Total entries
-   - Types distribution
-   - Source diversity
+ - Total entries
+ - Types distribution
+ - Source diversity
 
 2. **Learning Metrics**
-   - Categories learned
-   - Patterns discovered
-   - Improvement rate
+ - Categories learned
+ - Patterns discovered
+ - Improvement rate
 
 3. **Memory Metrics**
-   - Long-term entries
-   - Episodic entries
-   - Memory efficiency
+ - Long-term entries
+ - Episodic entries
+ - Memory efficiency
 
 4. **Reasoning Metrics**
-   - Success rate
-   - Decision confidence
-   - Goals achieved
+ - Success rate
+ - Decision confidence
+ - Goals achieved
 
 ## 🔀 Information Flow Example
 
@@ -341,79 +341,79 @@ Cap at 1.0 (100%)
 
 ```
 1. WEB CRAWLER
-   → Finds ML articles online
-   → Extracts 100 knowledge items
+ -> Finds ML articles online
+ -> Extracts 100 knowledge items
 
 2. KNOWLEDGE BASE
-   → Stores items with embeddings
-   → Creates semantic links
+ -> Stores items with embeddings
+ -> Creates semantic links
 
 3. LEARNING ENGINE
-   → Categorizes: AI/ML domain
-   → Extracts concepts: Neural Networks, Training, etc.
-   → Discovers patterns: Common techniques
+ -> Categorizes: AI/ML domain
+ -> Extracts concepts: Neural Networks, Training, etc.
+ -> Discovers patterns: Common techniques
 
 4. REASONING ENGINE
-   → Plans ML learning path
-   → Sets ML-related goals
-   → Reasons about applications
+ -> Plans ML learning path
+ -> Sets ML-related goals
+ -> Reasons about applications
 
 5. MEMORY MANAGER
-   → Stores in long-term: Key concepts
-   → Stores episode: "Learned ML fundamentals"
-   → Creates skill: "Machine Learning (level 0.6)"
+ -> Stores in long-term: Key concepts
+ -> Stores episode: "Learned ML fundamentals"
+ -> Creates skill: "Machine Learning (level 0.6)"
 
 6. AUTONOMOUS AGENT
-   → Updates capabilities
-   → Saves state
-   → Reports progress
+ -> Updates capabilities
+ -> Saves state
+ -> Reports progress
 ```
 
-## 🛡️ Safety Features
+## Safety Features
 
 1. **Resource Limits**
-   - CPU capping
-   - Memory limits
-   - Request rate limiting
+ - CPU capping
+ - Memory limits
+ - Request rate limiting
 
 2. **Graceful Degradation**
-   - Fallback search methods
-   - Error recovery
-   - State preservation
+ - Fallback search methods
+ - Error recovery
+ - State preservation
 
 3. **Data Integrity**
-   - Regular persistence
-   - Backup mechanisms
-   - Checksum validation
+ - Regular persistence
+ - Backup mechanisms
+ - Checksum validation
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 1. **Multi-Agent System**
-   - Collaborative learning
-   - Distributed processing
-   - Knowledge sharing
+ - Collaborative learning
+ - Distributed processing
+ - Knowledge sharing
 
 2. **Advanced NLP**
-   - Better extraction
-   - Deeper understanding
-   - Context awareness
+ - Better extraction
+ - Deeper understanding
+ - Context awareness
 
 3. **Reinforcement Learning**
-   - Reward-based improvement
-   - Policy learning
-   - Strategy optimization
+ - Reward-based improvement
+ - Policy learning
+ - Strategy optimization
 
 4. **Visual Learning**
-   - Image processing
-   - Diagram understanding
-   - Visual knowledge
+ - Image processing
+ - Diagram understanding
+ - Visual knowledge
 
 5. **Real-time Sync**
-   - Cloud backup
-   - Multi-device sync
-   - Collaborative access
+ - Cloud backup
+ - Multi-device sync
+ - Collaborative access
 
-## 📈 Scalability Considerations
+## Scalability Considerations
 
 ### Knowledge Base Scaling
 - Current: Up to 100,000 entries

@@ -32,7 +32,7 @@ class ErrorRecoverySystem:
         self.history_file = config.DATA_DIR / "error_recovery_history.json"
         self._initialize_strategies()
         self.load_history()
-        logger.info("🛡️ Error Recovery System initialized")
+        logger.info(" Error Recovery System initialized")
     
     def _initialize_strategies(self):
         """Initialize error recovery strategies"""
@@ -59,7 +59,7 @@ class ErrorRecoverySystem:
             if self.history_file.exists():
                 with open(self.history_file, 'r') as f:
                     self.error_history = json.load(f)
-            logger.info(f"📂 Error history loaded: {len(self.error_history)} errors")
+            logger.info(f" Error history loaded: {len(self.error_history)} errors")
         except Exception as e:
             logger.error(f"Error loading history: {e}")
     
@@ -68,7 +68,7 @@ class ErrorRecoverySystem:
         try:
             with open(self.history_file, 'w') as f:
                 json.dump(self.error_history[-1000:], f, indent=2)  # Keep last 1000
-            logger.debug("💾 Error recovery history saved")
+            logger.debug(" Error recovery history saved")
         except Exception as e:
             logger.error(f"Error saving history: {e}")
     
@@ -134,7 +134,7 @@ class ErrorRecoverySystem:
             else:
                 self.recovery_stats[best_strategy]["failures"] += 1
             
-            logger.info(f"✅ Recovery attempt: {best_strategy} - {'SUCCESS' if error_record['recovery_successful'] else 'FAILED'}")
+            logger.info(f" Recovery attempt: {best_strategy} - {'SUCCESS' if error_record['recovery_successful'] else 'FAILED'}")
         
         except Exception as recovery_error:
             logger.error(f"Recovery failed: {recovery_error}")
@@ -187,7 +187,7 @@ class ErrorRecoverySystem:
                        recovery_function: Optional[Callable] = None,
                        max_retries: int = 3) -> Dict:
         """Retry strategy with exponential backoff"""
-        logger.info("🔄 Attempting retry strategy...")
+        logger.info(" Attempting retry strategy...")
         
         if not recovery_function:
             return {"status": "no_recovery_function"}
@@ -250,7 +250,7 @@ class ErrorRecoverySystem:
     
     def _fallback_strategy(self, error: Exception, context: Dict) -> Dict:
         """Fallback to safe default"""
-        logger.info("⚠️ Using fallback strategy...")
+        logger.info("⚠ Using fallback strategy...")
         
         fallback_result = {
             "status": "recovered_with_fallback",
@@ -262,7 +262,7 @@ class ErrorRecoverySystem:
     
     def _rollback_strategy(self, error: Exception, context: Dict) -> Dict:
         """Rollback to previous state"""
-        logger.info("↩️ Attempting rollback...")
+        logger.info("↩ Attempting rollback...")
         
         return {
             "status": "rolled_back",
@@ -271,7 +271,7 @@ class ErrorRecoverySystem:
     
     def _escalate_strategy(self, error: Exception, context: Dict) -> Dict:
         """Escalate error for higher-level handling"""
-        logger.warning(f"⬆️ Escalating error: {type(error).__name__}")
+        logger.warning(f"⬆ Escalating error: {type(error).__name__}")
         
         return {
             "status": "escalated",
@@ -282,7 +282,7 @@ class ErrorRecoverySystem:
     def _learn_from_error_strategy(self, error: Exception, context: Dict,
                                   recovery_function: Optional[Callable] = None) -> Dict:
         """Learn from error to prevent future occurrences"""
-        logger.info("📚 Learning from error...")
+        logger.info(" Learning from error...")
         
         error_analysis = {
             "error_type": type(error).__name__,

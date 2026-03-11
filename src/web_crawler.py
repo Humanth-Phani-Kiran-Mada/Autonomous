@@ -23,7 +23,7 @@ class WebCrawler:
         self.cache_dir = config.CACHE_DIR / "crawled_content"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.load_state()
-        logger.info("🕷️ Web Crawler initialized")
+        logger.info(" Web Crawler initialized")
     
     def load_state(self):
         """Load crawler state from disk"""
@@ -60,7 +60,7 @@ class WebCrawler:
     async def fetch_page(self, session: aiohttp.ClientSession, url: str) -> Optional[str]:
         """Fetch a single page with error handling"""
         if url in self.visited_urls:
-            logger.debug(f"📋 URL already visited: {url}")
+            logger.debug(f" URL already visited: {url}")
             return None
         
         try:
@@ -76,16 +76,16 @@ class WebCrawler:
                         "timestamp": datetime.now().isoformat(),
                         "status": 200
                     }
-                    logger.info(f"✅ Fetched: {url}")
+                    logger.info(f" Fetched: {url}")
                     return content
                 else:
-                    logger.warning(f"⚠️ Failed to fetch {url}: Status {response.status}")
+                    logger.warning(f"⚠ Failed to fetch {url}: Status {response.status}")
                     return None
         except asyncio.TimeoutError:
-            logger.warning(f"⏱️ Timeout fetching {url}")
+            logger.warning(f"⏱ Timeout fetching {url}")
             return None
         except Exception as e:
-            logger.error(f"❌ Error fetching {url}: {e}")
+            logger.error(f" Error fetching {url}: {e}")
             return None
     
     def extract_knowledge(self, html: str, url: str) -> List[Dict]:
@@ -149,7 +149,7 @@ class WebCrawler:
                     "timestamp": datetime.now().isoformat()
                 })
             
-            logger.info(f"🧠 Extracted {len(knowledge)} knowledge items from {url}")
+            logger.info(f" Extracted {len(knowledge)} knowledge items from {url}")
             return knowledge
         except Exception as e:
             logger.error(f"Error extracting knowledge from {url}: {e}")
@@ -168,7 +168,7 @@ class WebCrawler:
         sources = sources or config.LEARNING_SOURCES
         self.discovered_knowledge = []
         
-        logger.info(f"🚀 Starting autonomous crawl of {len(sources)} sources (max {max_pages} pages)")
+        logger.info(f" Starting autonomous crawl of {len(sources)} sources (max {max_pages} pages)")
         
         connector = aiohttp.TCPConnector(limit_per_host=5)
         async with aiohttp.ClientSession(connector=connector) as session:
@@ -201,7 +201,7 @@ class WebCrawler:
                     logger.error(f"Error processing {source}: {e}")
         
         self.save_state()
-        logger.info(f"✅ Crawl complete: {len(self.discovered_knowledge)} knowledge items acquired")
+        logger.info(f" Crawl complete: {len(self.discovered_knowledge)} knowledge items acquired")
         return self.discovered_knowledge
     
     def get_discovery_summary(self) -> Dict:

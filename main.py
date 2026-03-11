@@ -15,7 +15,7 @@ from src.autonomous_agent import AutonomousAgent
 
 def main():
     """Main entry point"""
-    logger.info("🚀 Starting Self-Evolving AI System")
+    logger.info(" Starting Self-Evolving AI System")
     logger.info(f"Configuration: {config.PROJECT_ROOT}")
     
     try:
@@ -43,11 +43,11 @@ def main():
         
         # Run autonomous loop
         if config.AUTONOMOUS_MODE_ENABLED:
-            logger.info("🤖 Running in AUTONOMOUS mode")
+            logger.info(" Running in AUTONOMOUS mode")
             max_iterations = int(input("Enter max iterations (default 100): ") or "100")
             asyncio.run(agent.autonomous_loop(max_iterations=int(max_iterations)))
         else:
-            logger.info("🎮 Running in INTERACTIVE mode")
+            logger.info(" Running in INTERACTIVE mode")
             interactive_mode(agent)
     
     except Exception as e:
@@ -75,7 +75,7 @@ def interactive_mode(agent):
             command = input("\n> ").strip().lower()
             
             if command == "exit":
-                logger.info("👋 Goodbye!")
+                logger.info(" Goodbye!")
                 break
             
             elif command == "learn":
@@ -106,7 +106,7 @@ def interactive_mode(agent):
                 logger.warning(f"Unknown command: {command}")
         
         except KeyboardInterrupt:
-            logger.info("\n⏸️ Command interrupted")
+            logger.info("\n Command interrupted")
         except Exception as e:
             logger.error(f"Error: {e}")
 
@@ -120,12 +120,12 @@ def print_status(agent):
     mem_stats = agent.memory.get_memory_statistics()
     reasoning_stats = agent.reasoning.get_reasoning_stats()
     
-    logger.info(f"\n📚 Knowledge Base: {kb_stats['total_entries']} entries")
-    logger.info(f"🧠 Memory: {mem_stats['long_term_entries']} long-term, {mem_stats['episodic_entries']} episodes")
-    logger.info(f"📊 Success rate: {reasoning_stats['success_rate']:.2%}")
-    logger.info(f"🎯 Goals: {len(agent.reasoning.goals)}")
-    logger.info(f"💪 Skills: {len(agent.capabilities)}")
-    logger.info(f"🔄 Iterations: {agent.iteration_count}")
+    logger.info(f"\n Knowledge Base: {kb_stats['total_entries']} entries")
+    logger.info(f" Memory: {mem_stats['long_term_entries']} long-term, {mem_stats['episodic_entries']} episodes")
+    logger.info(f" Success rate: {reasoning_stats['success_rate']:.2%}")
+    logger.info(f" Goals: {len(agent.reasoning.goals)}")
+    logger.info(f" Skills: {len(agent.capabilities)}")
+    logger.info(f" Iterations: {agent.iteration_count}")
     
     logger.info("=" * 60)
 

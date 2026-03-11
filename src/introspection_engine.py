@@ -35,7 +35,7 @@ class IntrospectionEngine:
         self.anomalies_file = config.DATA_DIR / "anomalies.json"
         
         self.load_introspection_data()
-        logger.info("🔍 Introspection Engine initialized")
+        logger.info(" Introspection Engine initialized")
     
     def load_introspection_data(self):
         """Load introspection data from disk"""
@@ -48,7 +48,7 @@ class IntrospectionEngine:
                 with open(self.anomalies_file, 'r') as f:
                     self.anomalies_detected = json.load(f)
             
-            logger.info("📂 Introspection data loaded")
+            logger.info(" Introspection data loaded")
         except Exception as e:
             logger.error(f"Error loading introspection data: {e}")
     
@@ -61,7 +61,7 @@ class IntrospectionEngine:
             with open(self.anomalies_file, 'w') as f:
                 json.dump(self.anomalies_detected, f, indent=2)
             
-            logger.debug("💾 Introspection data saved")
+            logger.debug(" Introspection data saved")
         except Exception as e:
             logger.error(f"Error saving introspection data: {e}")
     
@@ -208,13 +208,13 @@ class IntrospectionEngine:
             })
         
         if biases_found:
-            logger.warning(f"⚠️ Detected {len(biases_found)} potential cognitive biases")
+            logger.warning(f"⚠ Detected {len(biases_found)} potential cognitive biases")
         
         return biases_found
     
     def self_evaluate(self) -> Dict:
         """Perform comprehensive self-evaluation"""
-        logger.info("🔍 Running self-evaluation...")
+        logger.info(" Running self-evaluation...")
         
         evaluation = {
             "timestamp": datetime.now().isoformat(),

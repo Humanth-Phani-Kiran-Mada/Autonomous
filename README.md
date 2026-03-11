@@ -1,53 +1,53 @@
 # Self-Evolving AI System
 
 A sophisticated, autonomous AI system that can:
-- 🌐 **Crawl the web** autonomously to acquire knowledge
-- 🧠 **Learn continuously** from diverse sources
-- 💭 **Reason** about complex problems
-- 🚀 **Improve itself** without human intervention
-- 📚 **Build persistent knowledge** across sessions
-- 🎯 **Set and achieve goals** autonomously
-- 🔄 **Evolve capabilities** over time
+- **Crawl the web** autonomously to acquire knowledge
+- **Learn continuously** from diverse sources
+- **Reason** about complex problems
+- **Improve itself** without human intervention
+- **Build persistent knowledge** across sessions
+- **Set and achieve goals** autonomously
+- **Evolve capabilities** over time
 
 ## Architecture
 
 ### Core Components
 
 1. **Web Crawler** (`web_crawler.py`)
-   - Autonomous web crawling and content discovery
-   - Intelligent link following and content extraction
-   - Persistent state management
-   - Batch processing and parallel requests
+ - Autonomous web crawling and content discovery
+ - Intelligent link following and content extraction
+ - Persistent state management
+ - Batch processing and parallel requests
 
 2. **Knowledge Base** (`knowledge_base.py`)
-   - Vector embeddings for semantic search
-   - Automatic relevance scoring
-   - Knowledge pruning and compression
-   - Support for multiple knowledge types
+ - Vector embeddings for semantic search
+ - Automatic relevance scoring
+ - Knowledge pruning and compression
+ - Support for multiple knowledge types
 
 3. **Memory Manager** (`memory_manager.py`)
-   - Short-term memory with TTL
-   - Long-term persistent memory
-   - Episodic memory for experiences
-   - Automatic memory persistence
+ - Short-term memory with TTL
+ - Long-term persistent memory
+ - Episodic memory for experiences
+ - Automatic memory persistence
 
 4. **Learning Engine** (`learning_engine.py`)
-   - Knowledge categorization and concept extraction
-   - Skill development and improvement tracking
-   - Pattern discovery and learning
-   - Improvement metrics and analytics
+ - Knowledge categorization and concept extraction
+ - Skill development and improvement tracking
+ - Pattern discovery and learning
+ - Improvement metrics and analytics
 
 5. **Reasoning Engine** (`reasoning_engine.py`)
-   - Goal setting and decomposition
-   - Action planning based on knowledge
-   - Decision-making with confidence scoring
-   - Problem-solving and reasoning about topics
+ - Goal setting and decomposition
+ - Action planning based on knowledge
+ - Decision-making with confidence scoring
+ - Problem-solving and reasoning about topics
 
 6. **Autonomous Agent** (`autonomous_agent.py`)
-   - Orchestrates all components
-   - Runs autonomous learning cycles
-   - Manages agent state and persistence
-   - Coordinates improvement and maintenance
+ - Orchestrates all components
+ - Runs autonomous learning cycles
+ - Manages agent state and persistence
+ - Coordinates improvement and maintenance
 
 ## Quick Start
 
@@ -96,52 +96,52 @@ python main.py
 
 Each iteration consists of 5 cycles:
 
-1. **🕷️ Crawling Cycle**
-   - Discovers and fetches new web content
-   - Extracts structured information
-   - Maintains crawling history
+1. ** Crawling Cycle**
+ - Discovers and fetches new web content
+ - Extracts structured information
+ - Maintains crawling history
 
-2. **📚 Learning Cycle**
-   - Processes discovered knowledge
-   - Categorizes and indexes content
-   - Learns key concepts and patterns
+2. ** Learning Cycle**
+ - Processes discovered knowledge
+ - Categorizes and indexes content
+ - Learns key concepts and patterns
 
-3. **💭 Reasoning Cycle**
-   - Analyzes acquired knowledge
-   - Performs problem-solving tasks
-   - Tracks decision-making confidence
+3. ** Reasoning Cycle**
+ - Analyzes acquired knowledge
+ - Performs problem-solving tasks
+ - Tracks decision-making confidence
 
-4. **🚀 Improvement Cycle**
-   - Identifies skill improvement opportunities
-   - Practices and refines capabilities
-   - Updates capability levels
+4. ** Improvement Cycle**
+ - Identifies skill improvement opportunities
+ - Practices and refines capabilities
+ - Updates capability levels
 
-5. **🔧 Maintenance Cycle**
-   - Persists all data to disk
-   - Optimizes storage
-   - Validates system integrity
+5. ** Maintenance Cycle**
+ - Persists all data to disk
+ - Optimizes storage
+ - Validates system integrity
 
 ### Key Features
 
-#### 🧠 Intelligent Learning
+#### Intelligent Learning
 - **Semantic Search**: Finds relevant knowledge using embeddings
 - **Pattern Recognition**: Discovers recurring patterns in data
 - **Skill Development**: Tracks and improves capabilities
 - **Knowledge Integration**: Combines information from multiple sources
 
-#### 🔄 Continuous Evolution
+#### Continuous Evolution
 - **Self-Improvement**: Identifies and addresses weaknesses
 - **Capability Growth**: Develops new skills over time
 - **Experience Learning**: Forms memories from actions and outcomes
 - **Adaptive Strategy**: Adjusts approach based on past successes
 
-#### 💾 Persistent Memory
+#### Persistent Memory
 - **Short-term**: Temporary data with expiration
 - **Long-term**: Important information with relevance tracking
 - **Episodic**: Experiences and events for learning
 - **Vector Storage**: Semantic understanding preservation
 
-#### 🎯 Autonomous Goal Management
+#### Autonomous Goal Management
 - **Goal Definition**: Set specific objectives
 - **Goal Decomposition**: Break down complex goals into steps
 - **Action Planning**: Generate steps to achieve goals
@@ -163,18 +163,18 @@ The system maintains data in:
 
 ```
 data/
-  ├── memory/              # Persistent memory files
-  ├── knowledge/           # Knowledge base and embeddings
-  ├── cache/              # Cached web content
-  ├── crawler_state.json  # Crawling history
-  ├── learning_metrics.json   # Learning progress
-  ├── skill_levels.json   # Capability levels
-  ├── goals.json          # Agent goals
-  └── agent_state.json    # Overall agent state
+ ├- memory/ # Persistent memory files
+ ├- knowledge/ # Knowledge base and embeddings
+ ├- cache/ # Cached web content
+ ├- crawler_state.json # Crawling history
+ ├- learning_metrics.json # Learning progress
+ ├- skill_levels.json # Capability levels
+ ├- goals.json # Agent goals
+ └- agent_state.json # Overall agent state
 
 logs/
-  ├── ai_evolution.log    # Main operations log
-  └── errors.log          # Error tracking
+ ├- ai_evolution.log # Main operations log
+ └- errors.log # Error tracking
 ```
 
 ## Performance Metrics
@@ -193,9 +193,9 @@ The system tracks:
 Edit `config.py`:
 ```python
 LEARNING_SOURCES = [
-    "https://en.wikipedia.org",
-    "https://www.arxiv.org",
-    # Add more sources
+ "https://en.wikipedia.org",
+ "https://www.arxiv.org",
+ # Add more sources
 ]
 ```
 
@@ -204,8 +204,8 @@ LEARNING_SOURCES = [
 In `learning_engine.py`:
 ```python
 def learn_custom_skill(self, skill_name):
-    # Your custom skill learning logic
-    pass
+ # Your custom skill learning logic
+ pass
 ```
 
 ### Extend Reasoning
@@ -213,8 +213,8 @@ def learn_custom_skill(self, skill_name):
 In `reasoning_engine.py`:
 ```python
 def custom_reasoning(self, topic):
-    # Your custom reasoning logic
-    pass
+ # Your custom reasoning logic
+ pass
 ```
 
 ## Safety Notes

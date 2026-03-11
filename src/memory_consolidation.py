@@ -30,7 +30,7 @@ class MemoryConsolidation:
         
         self.consolidation_file = config.DATA_DIR / "memory_consolidation.json"
         self.load_consolidation_state()
-        logger.info("🧠 Memory Consolidation Engine initialized")
+        logger.info(" Memory Consolidation Engine initialized")
     
     def load_consolidation_state(self):
         """Load consolidation state from disk"""
@@ -53,7 +53,7 @@ class MemoryConsolidation:
             }
             with open(self.consolidation_file, 'w') as f:
                 json.dump(data, f, indent=2)
-            logger.debug("💾 Memory consolidation state saved")
+            logger.debug(" Memory consolidation state saved")
         except Exception as e:
             logger.error(f"Error saving consolidation state: {e}")
     
@@ -127,7 +127,7 @@ class MemoryConsolidation:
     
     def perform_rehearsal(self, memory_key: str, rehearsal_number: int = 1) -> Dict:
         """Perform memory rehearsal and track effectiveness"""
-        logger.info(f"🔄 Rehearsing memory: {memory_key}")
+        logger.info(f" Rehearsing memory: {memory_key}")
         
         # Find the memory entry
         for memory_entry in self.consolidation_schedule:
@@ -171,7 +171,7 @@ class MemoryConsolidation:
                     
                     self.rehearsal_history.append(rehearsal_record)
                     
-                    logger.info(f"✅ Rehearsal complete: stability={memory_entry['stability']:.1%}")
+                    logger.info(f" Rehearsal complete: stability={memory_entry['stability']:.1%}")
                     
                     return rehearsal_record
         
@@ -182,7 +182,7 @@ class MemoryConsolidation:
         Prevent catastrophic forgetting by rehearsing important old memories
         when new learning occurs
         """
-        logger.info("🛡️ Preventing catastrophic forgetting...")
+        logger.info(" Preventing catastrophic forgetting...")
         
         # Get important old memories
         important_old = sorted(
@@ -203,7 +203,7 @@ class MemoryConsolidation:
                         rehearsals_performed += 1
                         break
         
-        logger.info(f"✅ Catastrophic forgetting prevention: {rehearsals_performed} memories rehearsed")
+        logger.info(f" Catastrophic forgetting prevention: {rehearsals_performed} memories rehearsed")
         
         return {"rehearsals_performed": rehearsals_performed}
     
@@ -239,7 +239,7 @@ class MemoryConsolidation:
     
     def optimize_consolidation_strategy(self) -> Dict:
         """Adapt consolidation strategy based on effectiveness"""
-        logger.info("🔧 Optimizing memory consolidation strategy...")
+        logger.info(" Optimizing memory consolidation strategy...")
         
         if not self.rehearsal_history:
             return {"status": "no_data"}

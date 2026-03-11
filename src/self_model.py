@@ -31,7 +31,7 @@ class SelfModel:
         self.diagnostics_file = config.DATA_DIR / "diagnostics.json"
         
         self.load_self_model()
-        logger.info("🔍 Self-Model Engine initialized")
+        logger.info(" Self-Model Engine initialized")
     
     def load_self_model(self):
         """Load self-model from persistent storage"""
@@ -42,7 +42,7 @@ class SelfModel:
                     self.capabilities = data.get("capabilities", {})
                     self.limitations = data.get("limitations", [])
                     self.learning_curves = data.get("learning_curves", {})
-                logger.info("📂 Self-model loaded from disk")
+                logger.info(" Self-model loaded from disk")
         except Exception as e:
             logger.error(f"Error loading self-model: {e}")
     
@@ -58,7 +58,7 @@ class SelfModel:
             }
             with open(self.model_file, 'w') as f:
                 json.dump(model_data, f, indent=2)
-            logger.debug("💾 Self-model saved")
+            logger.debug(" Self-model saved")
         except Exception as e:
             logger.error(f"Error saving self-model: {e}")
     
@@ -81,7 +81,7 @@ class SelfModel:
         # Initialize learning curve
         self.learning_curves[capability_name] = [initial_level]
         
-        logger.info(f"✅ Registered capability: {capability_name} ({domain})")
+        logger.info(f" Registered capability: {capability_name} ({domain})")
     
     def update_capability_performance(self, capability_name: str, 
                                      success: bool, confidence: float = 0.5,
@@ -115,7 +115,7 @@ class SelfModel:
         
         cap["last_updated"] = datetime.now().isoformat()
         
-        logger.debug(f"📊 Updated {capability_name}: level={cap['level']:.2%}, confidence={cap['confidence']:.2%}")
+        logger.debug(f" Updated {capability_name}: level={cap['level']:.2%}, confidence={cap['confidence']:.2%}")
     
     def detect_limitation(self, limitation_type: str, description: str,
                          severity: float = 0.5, affected_capability: str = "general"):
@@ -136,11 +136,11 @@ class SelfModel:
             if existing["type"] == limitation_type and existing["affected_capability"] == affected_capability:
                 existing["detection_count"] += 1
                 existing["severity"] = max(existing["severity"], severity)
-                logger.info(f"⚠️ Limitation reinforced: {limitation_type}")
+                logger.info(f"⚠ Limitation reinforced: {limitation_type}")
                 return existing
         
         self.limitations.append(limitation)
-        logger.warning(f"⚠️ New limitation detected: {limitation_type} (severity={severity:.2%})")
+        logger.warning(f"⚠ New limitation detected: {limitation_type} (severity={severity:.2%})")
         return limitation
     
     def add_mitigation_strategy(self, limitation_id: int, strategy: str):
@@ -149,7 +149,7 @@ class SelfModel:
             limitation = self.limitations[limitation_id]
             if strategy not in limitation["mitigation_strategies"]:
                 limitation["mitigation_strategies"].append(strategy)
-                logger.info(f"🛡️ Added mitigation strategy for {limitation['type']}")
+                logger.info(f" Added mitigation strategy for {limitation['type']}")
     
     def get_confidence_interval(self, capability_name: str, confidence_level: float = 0.95) -> Tuple[float, float]:
         """Calculate confidence interval for a capability estimate"""
@@ -188,11 +188,11 @@ class SelfModel:
             if (existing_error["error_type"] == error_type and 
                 existing_error["capability"] == capability):
                 existing_error["frequency"] += 1
-                logger.info(f"🔄 Error pattern reinforced: {error_type}")
+                logger.info(f" Error pattern reinforced: {error_type}")
                 return existing_error
         
         self.error_patterns.append(error_record)
-        logger.warning(f"❌ New error pattern: {error_type} in {capability}")
+        logger.warning(f" New error pattern: {error_type} in {capability}")
         
         # Trigger recovery mechanism if frequency is high
         if self._is_repeating_error(error_type):
@@ -208,7 +208,7 @@ class SelfModel:
     
     def run_self_diagnostics(self) -> Dict:
         """Run comprehensive self-diagnostics"""
-        logger.info("🔧 Running self-diagnostics...")
+        logger.info(" Running self-diagnostics...")
         
         diagnostics = {
             "timestamp": datetime.now().isoformat(),
