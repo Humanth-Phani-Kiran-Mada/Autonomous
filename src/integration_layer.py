@@ -197,8 +197,34 @@ class IntegrationLayer:
     CYCLE_COMPLETED = "cycle.completed"
     CYCLE_FAILED = "cycle.failed"
     
+    # Collective list of supported event types
+    EVENT_TYPES = [
+        CAPABILITY_DETECTED,
+        CAPABILITY_IMPROVED,
+        CAPABILITY_DEGRADED,
+        GOAL_GENERATED,
+        GOAL_ACHIEVED,
+        GOAL_FAILED,
+        LEARNING_COMPLETED,
+        LEARNING_FAILED,
+        KNOWLEDGE_ACQUIRED,
+        REASONING_COMPLETE,
+        DECISION_MADE,
+        ERROR_OCCURRED,
+        ERROR_RECOVERED,
+        MEMORY_CONSOLIDATED,
+        MEMORY_LOSS_DETECTED,
+        BIAS_DETECTED,
+        ANOMALY_DETECTED,
+        CYCLE_STARTED,
+        CYCLE_COMPLETED,
+        CYCLE_FAILED
+    ]
+
     def __init__(self):
         self.event_bus = EventBus()
+        # expose an instance-level alias for compatibility with tests
+        self.event_types: List[str] = list(self.EVENT_TYPES)
         self.cycle_status: Dict[str, str] = {}
         self.cycle_results: Dict[str, Dict[str, Any]] = {}
         self.cycle_timing: Dict[str, float] = {}

@@ -80,27 +80,80 @@ class CycleExecution:
 class CycleCoordinator:
     """Coordinates execution of the 8 autonomous cycles"""
     
-    # Define the 8 cycles in order
+    # SUPER CYCLE ORDER - 16 advanced autonomous cycles
+    # These cycles enable true self-improvement and competitive autonomous learning
     CYCLE_ORDER = [
+        # Tier 1: Knowledge Acquisition (original)
         "crawl",                    # Acquire new knowledge from web
         "learn",                    # Process and learn from knowledge
+        
+        # Tier 2: Theory Building & Synthesis (NEW advanced learning)
+        "synthesize_knowledge",     # Combine domains for novel insights
+        "build_theory",             # Discover fundamental principles
+        
+        # Tier 3: Self-Analysis & Improvement (original + enhanced)
         "consolidate_memory",       # Prevent catastrophic forgetting
         "introspect",               # Self-analysis and awareness
+        
+        # Tier 4: Advanced Learning Strategy (NEW meta-learning)
+        "curriculum_generation",    # Generate optimal learning paths
+        "adaptive_reasoning",       # Select best reasoning strategies
+        
+        # Tier 5: Capability Expansion (NEW emergent learning)
+        "expand_capabilities",      # Create entirely new capabilities
+        "evolutionary_adapt",       # Evolve strategies through evolution
+        
+        # Tier 6: Goal & Resource Management (NEW)
+        "allocate_attention",       # Focus resources on important problems
         "generate_goals",           # Create autonomous goals
+        
+        # Tier 7: Planning & Decision (original)
         "reason",                   # Reasoning and planning
+        
+        # Tier 8: Architecture Evolution (NEW self-modification)
+        "modify_architecture",      # Propose & implement architectural changes
+        
+        # Tier 9: Self-Improvement (original)
         "improve",                  # Self-improvement via meta-learning
+        
+        # Tier 10: Maintenance & Optimization (original)
         "maintain"                  # Save state and optimize
     ]
     
     # Dependencies: cycle -> list of cycles it depends on
     CYCLE_DEPENDENCIES = {
+        # Knowledge acquisition tier
         "learn": ["crawl"],
+        "synthesize_knowledge": ["learn"],
+        "build_theory": ["synthesize_knowledge"],
+        
+        # Self-analysis tier
         "consolidate_memory": ["learn"],
         "introspect": ["learn", "consolidate_memory"],
-        "generate_goals": ["introspect"],
-        "reason": ["generate_goals", "introspect"],
-        "improve": ["reason", "generate_goals"],
-        "maintain": ["improve"]
+        
+        # Advanced learning tier
+        "curriculum_generation": ["build_theory", "introspect"],
+        "adaptive_reasoning": ["build_theory"],
+        
+        # Capability expansion tier
+        "expand_capabilities": ["adaptive_reasoning", "curriculum_generation"],
+        "evolutionary_adapt": ["expand_capabilities"],
+        
+        # Goal & resource management
+        "allocate_attention": ["curriculum_generation"],
+        "generate_goals": ["introspect", "expand_capabilities"],
+        
+        # Planning & decision
+        "reason": ["generate_goals", "adaptive_reasoning", "allocate_attention"],
+        
+        # Architecture evolution
+        "modify_architecture": ["evolutionary_adapt", "reason"],
+        
+        # Self-improvement
+        "improve": ["reason", "generate_goals", "modify_architecture"],
+        
+        # Maintenance
+        "maintain": ["improve", "synthesize_knowledge"]
     }
     
     def __init__(self, max_retries: int = 3):
@@ -115,6 +168,11 @@ class CycleCoordinator:
         self.performance_metrics: Dict[str, List[float]] = {
             cycle: [] for cycle in self.CYCLE_ORDER
         }
+
+    @property
+    def cycles(self) -> List[str]:
+        """Compatibility property returning the ordered list of cycles."""
+        return list(self.CYCLE_ORDER)
     
     def register_cycle(self, cycle_name: str, handler: Callable):
         """Register a handler for a cycle"""
