@@ -267,3 +267,60 @@
 2026-03-13 14:50:00 | INFO     | src.universal_capabilities_engine:__init__:86 - ✓ Universal Capabilities Engine initialized
 2026-03-13 14:50:00 | INFO     | src.universal_capabilities_engine:__init__:326 - ✓ Universal AI Interface initialized
 2026-03-13 14:50:00 | INFO     | src.universal_capabilities_engine:discover_needed_capabilities:258 - Discovering needed capabilities...
+2026-03-13 14:57:47 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:57:47 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 14:57:47 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 14:57:47 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 14:57:47 | INFO     | src.evolutionary_decision_engine:__init__:560 - ✓ Fast Decision Engine initialized
+2026-03-13 14:57:47 | INFO     | src.cycle_coordinator:integrate_evolutionary_decisions:467 - ✓ Evolutionary Decision Engine integrated into cycle coordinator
+2026-03-13 14:58:09 | ERROR    | __main__:main:367 - Demo failed: Gene.__init__() missing 1 required positional argument: 'value'
+2026-03-13 14:58:09 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 14:58:09 | ERROR    | __main__:main:367 - Demo failed: Gene.__init__() missing 1 required positional argument: 'value'
+2026-03-13 14:58:09 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 14:58:09 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 14:58:09 | INFO     | src.evolutionary_decision_engine:minimax_decision:451 - Minimax decision in 0.00ms
+2026-03-13 14:58:09 | ERROR    | __main__:main:367 - Demo failed: Gene.__init__() missing 1 required positional argument: 'value'
+2026-03-13 14:58:09 | ERROR    | __main__:main:367 - Demo failed: Gene.__init__() missing 1 required positional argument: 'value'
+2026-03-13 14:58:35 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:58:35 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 14:58:35 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 14:58:35 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 14:58:35 | INFO     | src.evolutionary_decision_engine:__init__:560 - ✓ Fast Decision Engine initialized
+2026-03-13 14:58:35 | INFO     | src.cycle_coordinator:integrate_evolutionary_decisions:467 - ✓ Evolutionary Decision Engine integrated into cycle coordinator
+2026-03-13 14:59:40 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:59:40 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 14:59:40 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 14:59:40 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 14:59:40 | INFO     | src.evolutionary_decision_engine:__init__:560 - ✓ Fast Decision Engine initialized
+2026-03-13 14:59:40 | INFO     | src.cycle_coordinator:integrate_evolutionary_decisions:467 - ✓ Evolutionary Decision Engine integrated into cycle coordinator
+2026-03-13 15:00:01 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 15:00:01 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 15:00:01 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 15:00:01 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 15:00:01 | INFO     | src.evolutionary_decision_engine:__init__:560 - ✓ Fast Decision Engine initialized
+2026-03-13 15:00:01 | INFO     | src.cycle_coordinator:integrate_evolutionary_decisions:467 - ✓ Evolutionary Decision Engine integrated into cycle coordinator
+2026-03-13 15:00:20 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 15:00:20 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 15:00:20 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 15:00:20 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 15:00:20 | INFO     | src.evolutionary_decision_engine:__init__:560 - ✓ Fast Decision Engine initialized
+2026-03-13 15:00:20 | INFO     | src.cycle_coordinator:integrate_evolutionary_decisions:467 - ✓ Evolutionary Decision Engine integrated into cycle coordinator
+2026-03-13 15:00:20 | ERROR    | __main__:main:298 - Test Cycle Coordinator failed: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+2026-03-13 15:00:20 | ERROR    | __main__:main:298 - Test Evolutionary Decisions failed: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+2026-03-13 15:00:20 | ERROR    | __main__:main:298 - Test Cycle Integration failed: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+2026-03-13 15:00:20 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 15:00:20 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 15:00:20 | ERROR    | __main__:main:298 - Test Task Management failed: TaskManagementEngine.create_task() got multiple values for argument 'task_type'
+2026-03-13 15:00:20 | ERROR    | __main__:main:298 - Test Performance Analysis failed: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+2026-03-13 15:00:20 | ERROR    | __main__:main:298 - Test Concurrent Execution failed: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+2026-03-13 15:00:31 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 15:00:31 | INFO     | src.evolutionary_decision_engine:__init__:110 - ✓ Evolutionary Decision Maker initialized
+2026-03-13 15:00:31 | INFO     | src.evolutionary_decision_engine:__init__:253 - ✓ Probabilistic Predictor initialized
+2026-03-13 15:00:31 | INFO     | src.evolutionary_decision_engine:__init__:388 - ✓ Game Playing Engine initialized
+2026-03-13 15:00:31 | INFO     | src.evolutionary_decision_engine:__init__:560 - ✓ Fast Decision Engine initialized
+2026-03-13 15:00:31 | INFO     | src.cycle_coordinator:integrate_evolutionary_decisions:467 - ✓ Evolutionary Decision Engine integrated into cycle coordinator
+2026-03-13 15:00:31 | ERROR    | __main__:main:298 - Test Evolutionary Decisions failed: float division by zero
+2026-03-13 15:00:31 | ERROR    | __main__:main:298 - Test Cycle Integration failed: Unknown format code '%' for object of type 'str'
+2026-03-13 15:00:31 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 15:00:31 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 15:00:31 | ERROR    | __main__:main:298 - Test Task Management failed: TaskManagementEngine.create_task() got multiple values for argument 'task_type'

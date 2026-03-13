@@ -454,7 +454,112 @@ class CycleCoordinator:
                 logger.info(f"{status_icon} {exec_data.cycle_name:20} "
                            f"{exec_data.status.value:10} "
                            f"{exec_data.get_duration():7.2f}s")
+    
+    def integrate_evolutionary_decisions(self):
+        """Integrate evolutionary decision-making into the cycle"""
+        try:
+            from .evolutionary_decision_engine import (
+                get_fast_decision_engine,
+                DecisionContext
+            )
+            
+            self.decision_engine = get_fast_decision_engine()
+            logger.info("✓ Evolutionary Decision Engine integrated into cycle coordinator")
+            
+            return True
+        except ImportError as e:
+            logger.warning(f"⚠ Could not import evolutionary decision engine: {e}")
+            return False
+    
+    def make_evolutionary_decision(self, context: 'DecisionContext', 
+                                   parameters: Dict[str, Any],
+                                   max_latency_ms: int = 20) -> Any:
+        """Make a decision using the evolutionary decision engine"""
+        if not hasattr(self, 'decision_engine'):
+            logger.warning("Decision engine not initialized. Call integrate_evolutionary_decisions()")
+            return None
+        
+        try:
+            decision = self.decision_engine.make_fast_decision(
+                context,
+                parameters,
+                max_latency_ms
+            )
+            
+            logger.debug(f"Decision made: {decision.choice} "
+                        f"(confidence: {decision.confidence:.1%}, "
+                        f"latency: {decision.execution_time_ms:.3f}ms)")
+            
+            return decision
+        
+        except Exception as e:
+            logger.error(f"Error making evolutionary decision: {e}")
+            return None
+    
+    def optimize_goals_with_evolution(self, available_goals: List[str],
+                                     constraints: Dict[str, Any]) -> str:
+        """Use evolutionary algorithm to select optimal goal"""
+        if not hasattr(self, 'decision_engine'):
+            return available_goals[0] if available_goals else None
+        
+        try:
+            from .evolutionary_decision_engine import DecisionContext
+            
+            # Use evolutionary decision engine for goal optimization
+            decision = self.make_evolutionary_decision(
+                DecisionContext.STRATEGY,
+                {
+                    "traits": available_goals,
+                    "fitness_function": lambda g: self._calculate_goal_fitness(g, constraints)
+                },
+                max_latency_ms=20
+            )
+            
+            return decision.choice if decision else (available_goals[0] if available_goals else None)
+        
+        except Exception as e:
+            logger.warning(f"Error in evolutionary goal optimization: {e}")
+            return available_goals[0] if available_goals else None
+    
+    def predict_resource_needs_with_probability(self, historical_usage: List[float]) -> float:
+        """Use probabilistic prediction to estimate future resource needs"""
+        if not hasattr(self, 'decision_engine'):
+            return sum(historical_usage) / len(historical_usage) if historical_usage else 0.5
+        
+        from .evolutionary_decision_engine import DecisionContext
+        
+        # Use probabilistic prediction for resource allocation
+        decision = self.make_evolutionary_decision(
+            DecisionContext.OPTIMIZATION,
+            {
+                "historical_sequence": historical_usage,
+                "possible_values": [v for v in range(0, 101)]  # 0-100% resources
+            },
+            max_latency_ms=10
+        )
+        
+        return decision.choice if decision else (sum(historical_usage) / len(historical_usage) / 100.0)
+    
+    def _calculate_goal_fitness(self, goal: str, constraints: Dict[str, Any]) -> float:
+        """Calculate fitness score for a goal"""
+        # This would be customized based on your domain
+        base_fitness = 0.5
+        
+        # Adjust based on constraints
+        if "feasibility" in constraints:
+            base_fitness *= constraints["feasibility"]
+        
+        if "priority" in constraints:
+            base_fitness *= constraints["priority"]
+        
+        return base_fitness * 100
 
 
 # Global cycle coordinator instance
 cycle_coordinator = CycleCoordinator()
+
+# Integrate evolutionary decision engine at module load time
+try:
+    cycle_coordinator.integrate_evolutionary_decisions()
+except Exception as e:
+    logger.warning(f"Could not auto-integrate decision engine: {e}")
