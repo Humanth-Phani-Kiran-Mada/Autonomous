@@ -123,3 +123,147 @@
 2026-03-11 20:24:38 | INFO     | src.autonomous_agent:__init__:219 - ======================================================================
 2026-03-11 20:25:33 | WARNING  | src.knowledge_base:<module>:18 - sentence-transformers not available, using basic search
 2026-03-13 12:45:36 | ERROR    | __main__:main:272 - Error during demo: attempted relative import with no known parent package
+2026-03-13 14:48:09 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:48:26 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:48:26 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:48:26 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:48:33 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:48:33 | INFO     | src.request_processing_engine:__init__:94 - ✓ Request Parser initialized
+2026-03-13 14:48:33 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:48:33 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:48:33 | INFO     | src.request_processing_engine:__init__:320 - ✓ Request Dispatcher initialized
+2026-03-13 14:48:33 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:48:59 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:__init__:94 - ✓ Request Parser initialized
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:__init__:320 - ✓ Request Dispatcher initialized
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Generate Python code to sort a list
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_multiple_requests:372 - Processing workflow with 3 requests
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Generate Python code
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Analyze dataset
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Analyze dataset
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: data_analysis
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: data_analysis (data_analysis)
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: data_analysis
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:_handle_data_analysis:309 - Analyzing data...
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: data_analysis
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Optimize code
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Optimize code
+2026-03-13 14:48:59 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:48:59 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:49:18 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:__init__:94 - ✓ Request Parser initialized
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:__init__:320 - ✓ Request Dispatcher initialized
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Generate Python code to sort a list
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_multiple_requests:372 - Processing workflow with 3 requests
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Generate Python code
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Analyze dataset
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Analyze dataset
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: data_analysis
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: data_analysis (data_analysis)
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: data_analysis
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:_handle_data_analysis:309 - Analyzing data...
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: data_analysis
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Optimize code
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Optimize code
+2026-03-13 14:49:18 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:49:18 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:49:18 | INFO     | src.universal_capabilities_engine:__init__:86 - ✓ Universal Capabilities Engine initialized
+2026-03-13 14:49:18 | INFO     | src.universal_capabilities_engine:__init__:326 - ✓ Universal AI Interface initialized
+2026-03-13 14:49:31 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:49:31 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:49:31 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:49:40 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:49:40 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:49:40 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:50:00 | WARNING  | src.knowledge_base:<module>:27 - sentence-transformers not available, using basic search
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:__init__:94 - ✓ Request Parser initialized
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:__init__:106 - ✓ Task Executor initialized
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:__init__:463 - ✓ Task Management Engine initialized
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:__init__:320 - ✓ Request Dispatcher initialized
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Generate Python code to sort a list
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code to sort a list
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_multiple_requests:372 - Processing workflow with 3 requests
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Generate Python code
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Generate Python code
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Analyze dataset
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Analyze dataset
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: data_analysis
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: data_analysis (data_analysis)
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: data_analysis
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:_handle_data_analysis:309 - Analyzing data...
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: data_analysis
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:325 - Processing request: Optimize code
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:parse_request:99 - Parsing request: Optimize code
+2026-03-13 14:50:00 | INFO     | src.request_processing_engine:process_request:330 - Detected task type: code_generation
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:create_task:487 - Created task: Auto: code_generation (code_generation)
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:process_tasks:502 - Processing task 1/1
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:184 - Executing task: Auto: code_generation
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:_handle_code_generation:214 - Generating code...
+2026-03-13 14:50:00 | INFO     | src.task_management_engine:execute_task:196 - ✓ Task completed: Auto: code_generation
+2026-03-13 14:50:00 | INFO     | src.universal_capabilities_engine:__init__:86 - ✓ Universal Capabilities Engine initialized
+2026-03-13 14:50:00 | INFO     | src.universal_capabilities_engine:__init__:326 - ✓ Universal AI Interface initialized
+2026-03-13 14:50:00 | INFO     | src.universal_capabilities_engine:discover_needed_capabilities:258 - Discovering needed capabilities...
