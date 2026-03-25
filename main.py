@@ -10,8 +10,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import config
-from src.logger import logger
-from src.autonomous_agent import AutonomousAgent
+from src.infrastructure.logger import logger
+from src.integration.autonomous_agent import AutonomousAgent
 
 def main():
     """Main entry point"""

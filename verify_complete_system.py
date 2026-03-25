@@ -12,10 +12,10 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.cycle_coordinator import cycle_coordinator
-from src.evolutionary_decision_engine import get_fast_decision_engine, DecisionContext
-from src.task_management_engine import get_task_management_engine
-from src.logger import logger
+from src.integration.cycle_coordinator import cycle_coordinator
+from src.advanced.evolutionary_decision_engine import get_fast_decision_engine, DecisionContext
+from src.infrastructure.task_management_engine import get_task_management_engine
+from src.infrastructure.logger import logger
 import time
 
 

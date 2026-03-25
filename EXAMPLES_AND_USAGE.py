@@ -10,23 +10,23 @@ from pathlib import Path
 import asyncio
 
 # Import new improvements
-from src.exceptions import (
+from src.utils.exceptions import (
     ValidationException, KnowledgeBaseException, CrawlerException
 )
-from src.utilities import (
+from src.utils.utilities import (
     retry_with_backoff, measure_performance, cached,
     CircuitBreaker, get_circuit_breaker
 )
-from src.validators import (
+from src.utils.validators import (
     validate_url, validate_content, validate_priority,
     ValidationChain
 )
-from src.types_and_constants import (
+from src.utils.types_and_constants import (
     KnowledgeEntry, Goal, SystemConstants,
     MemoryType, GoalStatus
 )
-from src.knowledge_base import KnowledgeBase
-from src.logger import logger
+from src.core.knowledge_base import KnowledgeBase
+from src.infrastructure.logger import logger
 
 
 # ============================================================================

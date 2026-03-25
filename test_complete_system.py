@@ -9,14 +9,14 @@ print("="*80)
 
 # Test 1: Task Management Engine
 print("\n[TEST 1] Task Management Engine")
-from src.task_management_engine import get_task_management_engine
+from src.infrastructure.task_management_engine import get_task_management_engine
 engine = get_task_management_engine()
 print(f"✓ Initialized")
 print(f"✓ Available capabilities: {list(engine.executor.capabilities.keys())}")
 
 # Test 2: Request Processing
 print("\n[TEST 2] Request Processing Engine")
-from src.request_processing_engine import get_request_dispatcher
+from src.infrastructure.request_processing_engine import get_request_dispatcher
 dispatcher = get_request_dispatcher()
 parsed = dispatcher.parser.parse_request("Generate Python code to sort a list")
 print(f"✓ Parsed request")
@@ -47,7 +47,7 @@ print(f"✓ Successful: {results['successful']} tasks")
 
 # Test 5: Universal Capabilities
 print("\n[TEST 5] Universal Capabilities Engine")
-from src.universal_capabilities_engine import get_universal_ai
+from src.advanced.universal_capabilities_engine import get_universal_ai
 ai = get_universal_ai()
 caps = ai.capabilities()
 print(f"✓ Total capabilities: {caps['total_capabilities']}")

@@ -21,11 +21,11 @@ def main():
     # Test 2: Core modules
     try:
         print("[2/5] Testing core module imports...")
-        from src.knowledge_base import KnowledgeBase
-        from src.memory_manager import MemoryManager
-        from src.learning_engine import LearningEngine
-        from src.reasoning_engine import ReasoningEngine
-        from src.web_crawler import WebCrawler
+        from src.core.knowledge_base import KnowledgeBase
+        from src.core.memory_manager import MemoryManager
+        from src.core.learning_engine import LearningEngine
+        from src.core.reasoning_engine import ReasoningEngine
+        from src.core.web_crawler import WebCrawler
         print("     [OK] All core modules imported")
     except Exception as e:
         print(f"     [FAIL] Import error: {e}")
