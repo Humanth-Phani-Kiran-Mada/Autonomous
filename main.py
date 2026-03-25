@@ -1,12 +1,31 @@
 """
-Main entry point for the Self-Evolving AI System
+Main entry point for the Autonomous AI System
+
+This module provides the primary interface for running the autonomous AI system
+in either autonomous mode (self-directing learning) or interactive mode 
+(user-directed commands).
+
+USAGE:
+    Autonomous mode:
+        python main.py
+        
+    Interactive mode:
+        Edit config.py: AUTONOMOUS_MODE_ENABLED = false
+        python main.py
+        
+REQUIREMENTS:
+    - Python 3.9+
+    - All dependencies from requirements.txt installed
+    - .env file configured (copy from .env.example)
 """
+
 import asyncio
 import os
 import sys
 from pathlib import Path
+from typing import Optional
 
-# Add project root to path
+# Add project root to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
 
 import config
